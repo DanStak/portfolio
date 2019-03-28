@@ -1,0 +1,75 @@
+@import 'variables';
+
+header{
+  width: 100%;
+  height: 100vh;
+  background-color: $header-bg-color;
+  color: $header-h-color;
+  
+
+  .header__containerH1{
+
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    
+
+    .header__h1--1{
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+
+    .h1__span{
+      color: $header-span-color;
+      letter-spacing: 2px;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+   }
+
+   .header__h1--2{
+     font-size: .9rem;
+     font-weight: 300;
+   }
+
+   .header__button{
+    margin-top: 4rem;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+
+    .fa-sort-down{
+      transform: rotate(-90deg);
+      font-size: inherit;
+      transition: .2s;
+    }
+  }
+
+
+  .header__button:hover{
+    background-color: $header-span-color;
+    border: 1px solid $header-span-color;
+    transform: scale(1.1);
+
+  }
+
+  .header__button:hover .fa-sort-down{
+    transform: rotate(0);
+    color: #EA2027;
+    font-size: 1.1rem;
+  }
+  }
+
+  
+  
+}
