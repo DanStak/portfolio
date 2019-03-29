@@ -86,7 +86,7 @@ header .header__containerH1 .header__button:hover .fa-sort-down {
 }
 
 main {
-  min-height: 100vh;
+  background-color: #4AB0D6;
 }
 
 main .about {
@@ -116,7 +116,6 @@ main .about .about__wrapper .about__mainText {
 
 main .skills {
   width: 80%;
-  height: 100vh;
   position: relative;
   top: -100px;
   z-index: 1;
@@ -124,12 +123,87 @@ main .skills {
   background-color: white;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.13);
+  color: #1D1E22;
 }
 
 main .skills .skills__h3 {
   text-align: center;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+main .skills .skills__wrapperBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .skills .wrapperBox__skill {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+main .skills .wrapperBox__skill .fab {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+main .skills .wrapperBox__skill .fa-html5,
+main .skills .wrapperBox__skill .description--html5 {
+  color: #e34f26;
+}
+
+main .skills .wrapperBox__skill .fa-css3-alt,
+main .skills .wrapperBox__skill .description--css3 {
+  color: #264de4;
+}
+
+main .skills .wrapperBox__skill .fa-js,
+main .skills .wrapperBox__skill .description--js {
+  color: #F0DB4F;
+}
+
+main .skills .wrapperBox__skill .fa-react,
+main .skills .wrapperBox__skill .description--react {
+  color: #61DBFB;
+}
+
+main .skills .wrapperBox__skill .fa-sass,
+main .skills .wrapperBox__skill .description--sass {
+  color: #CD679A;
+}
+
+main .skills .wrapperBox__skill .fa-git,
+main .skills .wrapperBox__skill .description--git {
+  color: #F1502F;
+}
+
+main .skills .wrapperBox__skill .skill__description {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+main .skills .wrapperBox__skill .skill__text {
+  text-align: justify;
+}
+
+main .projects {
+  min-height: 100vh;
+  background-color: #1D1E22;
+}
+
+main .contact {
+  height: 100vh;
+  background-color: red;
 }
 /*# sourceMappingURL=main.css.map */
