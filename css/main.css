@@ -243,4 +243,9 @@ main .contact {
   height: 100vh;
   background-color: red;
 }
+
+main .contact .contact figure img {
+  height: 2rem;
+  width: auto;
+}
 /*# sourceMappingURL=main.css.map */
