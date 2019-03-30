@@ -58,15 +58,14 @@ header .header__containerH1 .header__button {
   padding: 5px 10px;
   color: white;
   position: relative;
-  overflow: hidden;
+  font-size: 1rem;
   -webkit-transition: .2s;
   transition: .2s;
 }
 
-header .header__containerH1 .header__button .fa-sort-down {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  font-size: inherit;
+header .header__containerH1 .header__button .fa-arrow-right {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -74,15 +73,11 @@ header .header__containerH1 .header__button .fa-sort-down {
 header .header__containerH1 .header__button:hover {
   background-color: #4AB0D6;
   border: 1px solid #4AB0D6;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
-header .header__containerH1 .header__button:hover .fa-sort-down {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  color: #EA2027;
-  font-size: 1.1rem;
+header .header__containerH1 .header__button:hover .fa-arrow-right {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 main .about {
@@ -101,8 +96,9 @@ main .about .about__wrapper {
 main .about .about__wrapper .about__h3 {
   text-align: center;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 main .about .about__wrapper .about__mainText {
@@ -111,7 +107,6 @@ main .about .about__wrapper .about__mainText {
 }
 
 main .skills {
-  background-color: white;
   color: #1D1E22;
   background-color: #4AB0D6;
   position: relative;
@@ -209,9 +204,18 @@ main .skills .skill__fill {
 
 main .projects {
   background-color: #1D1E22;
+  color: #b9b9b9;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 2rem 0 4rem;
+}
+
+main .projects .projects__h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 main .projects .projects__container {
@@ -227,25 +231,128 @@ main .projects .projects__container {
 main .projects .projects__container .projects__example {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  margin-bottom: 2rem;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
-main .projects .projects__container .projects__example figure {
-  height: 100%;
+main .projects .projects__container .projects__example .example__title {
+  position: absolute;
+  top: 20%;
+  left: -100%;
+  text-transform: uppercase;
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-main .projects .projects__container .projects__example figure img {
+main .projects .projects__container .projects__example .example__show {
+  position: absolute;
+  display: block;
+  bottom: 20%;
+  right: -100%;
+  z-index: 1;
+  text-transform: uppercase;
+  border: 2px solid #b9b9b9;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: #b9b9b9;
+  opacity: 1;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+main .projects .projects__container .projects__example .example__show:hover {
+  border: 2px solid #ea2027;
+  background-color: #ea2027;
+  color: white;
+}
+
+main .projects .projects__container .projects__example:hover::after {
+  opacity: 0;
+}
+
+main .projects .projects__container .projects__example:hover .example__title {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 1;
+}
+
+main .projects .projects__container .projects__example:hover .example__show {
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  opacity: 1;
+}
+
+main .projects .projects__container .projects__example__first::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/budget-app.png);
+}
+
+main .projects .projects__container .projects__example__second::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/budget-app.png);
+}
+
+main .projects .projects__container .projects__example__third::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/budget-app.png);
+}
+
+main .projects .projects__container .projects__example__fourth::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/budget-app.png);
 }
 
 main .contact {
   height: 100vh;
   background-color: red;
-}
-
-main .contact .contact figure img {
-  height: 2rem;
-  width: auto;
 }
 /*# sourceMappingURL=main.css.map */

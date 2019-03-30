@@ -1,9 +1,10 @@
+@import 'mixins';
+
 main{
-  // background-color: $main-bg-color;
 
   .about{
     background-color: $header-bg-color;
-    color: rgb(185, 185, 185);
+    color: $about-text-color;
     padding-bottom: 100px;
     
 
@@ -14,10 +15,7 @@ main{
       margin: 0 auto;
 
       .about__h3{
-        text-align: center;
-        font-weight: 300;
-        font-size: 1.5rem;
-         margin-bottom: 2rem;
+        @include articlesH3();
       }
 
       .about__mainText{
@@ -28,31 +26,25 @@ main{
   }
 
   .skills{
-    // z-index: 1;
-    background-color: white;
     color: $skill-text-color;
     background-color: $main-bg-color;
     position: relative;
 
-
+   
     .skills__section{
       z-index: 1;
-    width: 80%;      
-    margin: 0 auto;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.13);
-    background-color: #fff;
-    position: relative;
-    top: -100px;
+      width: 80%;      
+      margin: 0 auto;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.13);
+      background-color: #fff;
+      position: relative;
+      top: -100px;
 
 
 
      .skills__h3{
-       text-align: center;
-       font-weight: 300;
-       font-size: 1.7rem;
-        margin-bottom: 2rem;
-        padding-top: 2rem;
+       @include articlesH3();
       }
 
       .skills__wrapperBox{
@@ -126,8 +118,14 @@ main{
 
   .projects{
     background-color: $projects-bg-color;
+    color: $projects-text-color;
+
     box-sizing: border-box;
     padding: 2rem 0 4rem;
+
+    .projects__h3{
+      @include articlesH3();
+    }
 
     .projects__container{
       width: 80%;
@@ -137,19 +135,85 @@ main{
 
       .projects__example{
         flex-basis: 100%;
-        // border: 1px solid white;
-        margin-bottom: 2rem;
+        // margin-bottom: 2rem;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
 
+        .example__title{
+          position: absolute;
+          top: 20%;
+          left: -100%;
+          text-transform: uppercase;
+          opacity: 0;
+          z-index: 1;
+          width: 100%;
+          text-align: center;
+          transition: .4s;
+        }
 
-        & figure{
-          height: 100%;
+        .example__show{
+          position: absolute;
+          display: block;
+          bottom: 20%;
+          right: -100%;
+          z-index: 1;
+          text-transform: uppercase;
+          border: 2px solid $projects-text-color;
+          padding: 10px 15px;
+          background-color: transparent;
+          color: $projects-text-color;
+          opacity: 1;
+          transition: .4s;
+        }
 
-          img{
-            width: 100%;
-            height: 100%;
-          }
-        } 
+        .example__show:hover{
+          border: 2px solid $example-main-color;
+          background-color: $example-main-color;
+          color: white;
+        }
       }
+
+      .projects__example:hover::after{
+        opacity: 0;
+      }
+
+      .projects__example:hover .example__title{
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+      }
+
+      .projects__example:hover .example__show{
+        right: 50%;
+        transform: translateX(50%);
+        opacity: 1;
+      }
+      
+
+      .projects__example__first::after{
+        @include projectImg();        
+        background-image: url(../img/budget-app.png);
+      }
+
+      .projects__example__second::after{
+        @include projectImg();
+        background-image: url(../img/budget-app.png);
+      }
+
+      .projects__example__third::after{
+        @include projectImg();
+        background-image: url(../img/budget-app.png);
+      }
+
+      .projects__example__fourth::after{
+        @include projectImg();
+        background-image: url(../img/budget-app.png);
+      }
+
+      
     }
   }
   
@@ -157,10 +221,5 @@ main{
   .contact{
     height: 100vh;
     background-color: red;
-
-    .contact figure img{
-      height: 2rem;
-      width: auto;
-    }
   }
 }

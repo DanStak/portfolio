@@ -45,13 +45,14 @@ header{
     padding: 5px 10px;
     color: white;
     position: relative;
-    overflow: hidden;
+    font-size: 1rem;
     transition: .2s;
 
-    .fa-sort-down{
-      transform: rotate(-90deg);
-      font-size: inherit;
+
+    .fa-arrow-right{
+      transform: rotate(0);
       transition: .2s;
+      
     }
   }
 
@@ -59,14 +60,11 @@ header{
   .header__button:hover{
     background-color: $header-span-color;
     border: 1px solid $header-span-color;
-    transform: scale(1.1);
-
   }
 
-  .header__button:hover .fa-sort-down{
-    transform: rotate(0);
-    color: #EA2027;
-    font-size: 1.1rem;
+  .header__button:hover .fa-arrow-right{
+    transform: rotate(90deg);
+    // color: #EA2027;
   }
   }
 
