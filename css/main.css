@@ -139,6 +139,8 @@ main .skills .skills__section .skills__wrapperBox {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-shadow: 0px 0px 66px 27px rgba(74, 176, 214, 0.18);
+  box-shadow: 0px 0px 66px 27px rgba(74, 176, 214, 0.18);
 }
 
 main .skills .skills__section .wrapperBox__skill {
@@ -146,7 +148,6 @@ main .skills .skills__section .wrapperBox__skill {
       flex-basis: 80%;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius: 10px;
   margin-bottom: 2rem;
 }
 
@@ -351,8 +352,166 @@ main .projects .projects__container .projects__example__fourth::after {
   background-image: url(../img/budget-app.png);
 }
 
-main .contact {
-  height: 100vh;
-  background-color: red;
+main .contact .contact__wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 2px solid #9c9595;
+  background-color: #1D1E22;
+  color: #9c9595;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .contact .contact__wrapper .contactWrapper__portrait {
+  display: block;
+  -ms-flex-preferred-size: 35vw;
+      flex-basis: 35vw;
+  -webkit-filter: opacity(80%);
+          filter: opacity(80%);
+  margin: 1rem 0;
+  border: none;
+}
+
+main .contact .contact__wrapper .contactWrapper__portrait .portrait {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #1D1E22;
+  -webkit-box-shadow: 0px 0px 66px 27px rgba(74, 176, 214, 0.18);
+  box-shadow: 0px 0px 66px 27px rgba(74, 176, 214, 0.18);
+}
+
+main .contact .contact__wrapper .contactWrapper__informations {
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 1rem 0;
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #2E2F33;
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage .informations__h4 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage .informations {
+  margin: 0 auto 1rem;
+  font-size: .9rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage .informations .icons {
+  margin-right: 1rem;
+  font-size: 1rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage .informations::after {
+  content: '';
+  display: block;
+  background-color: #4AB0D6;
+  position: absolute;
+  width: calc(100% + 10px);
+  height: 100%;
+  left: calc(-100% - 10px);
+  bottom: -90%;
+  -webkit-transition: 0.5s cubic-bezier(0.45, 0.41, 0, 1.6);
+  transition: 0.5s cubic-bezier(0.45, 0.41, 0, 1.6);
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage .informations:hover .icons {
+  color: #4AB0D6;
+}
+
+main .contact .contact__wrapper .contactWrapper__informations .informations__manage .informations:hover::after {
+  left: 0;
+}
+
+main .contact .contact__wrapper .contactWrapper__social {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .contact .contact__wrapper .contactWrapper__social .social {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 10px 0;
+  background-color: #2E2F33;
+  border: none;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main .contact .contact__wrapper .contactWrapper__social .social .social__link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main .contact .contact__wrapper .contactWrapper__social .social:hover {
+  background-color: #4AB0D6;
+}
+
+main .contact .contact__wrapper .contactWrapper__social .social:hover .social__link {
+  color: #1D1E22;
+}
+
+footer .footer__container {
+  height: 30vh;
+  color: #9c9595;
+  background-color: #1D1E22;
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer__container .footer__copy {
+  font-size: .6rem;
 }
 /*# sourceMappingURL=main.css.map */

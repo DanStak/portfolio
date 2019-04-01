@@ -1,4 +1,6 @@
 @import 'mixins';
+@import 'variables';
+
 
 main{
 
@@ -51,13 +53,15 @@ main{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        -webkit-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+          -moz-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+          box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
       }
 
       .wrapperBox__skill{
         flex-basis: 80%;
         text-align: center;
         border-top: 1px solid rgba(0, 0, 0, 0.13);
-        border-radius: 10px;      
         margin-bottom: 2rem;
 
         .fab{
@@ -219,7 +223,138 @@ main{
   
 
   .contact{
-    height: 100vh;
-    background-color: red;
+    .contact__wrapper{
+      // height: 70vh;
+      box-sizing: border-box;
+      // padding-top: 50px;
+      border-bottom: 2px solid $footerContact-text-color;
+      background-color: $footerContact-bg-color;
+      color: $footerContact-text-color;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .contactWrapper__portrait{
+        display: block;
+        flex-basis: 35vw;
+        filter: opacity(80%);
+        margin: 1rem 0;
+        border:none;
+        
+
+        .portrait{
+          width: 100%;
+          border-radius: 5px;
+          background-color: $footerContact-bg-color;
+          -webkit-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+          -moz-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+          box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+        }
+      }
+
+      .contactWrapper__informations{
+        text-align: center;
+        flex-basis: 100%;
+        margin: 1rem 0;
+
+
+        .informations__manage{
+          display: flex;
+          flex-direction: column;
+          background-color: $socialButtons-bg-color;
+          
+
+          .informations__h4{
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .informations{
+            margin: 0 auto 1rem;
+            font-size: .9rem;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            ;
+
+            .icons{
+              margin-right: 1rem;
+              font-size: 1rem;
+              transition: .3s;
+            }
+
+           
+          }
+
+          .informations::after{
+            content: '';
+            display: block;
+            background-color: $contact-hover-color;
+            position: absolute;
+            width: calc(100% + 10px);
+            height: 100%;
+            left: calc(-100% - 10px);
+            bottom: -90%;
+            transition: .5s cubic-bezier(0.45, 0.41, 0, 1.6);
+
+          }
+
+          .informations:hover .icons{
+            color: $contact-hover-color;
+          }
+
+          .informations:hover::after{
+            left: 0
+          }
+         
+        }
+
+        
+      }
+
+      .contactWrapper__social{
+        flex-basis: 50%;
+        display: flex;
+        justify-content: space-around;
+
+
+        .social{
+          flex-basis: 40%;
+          padding: 10px 0;
+          background-color: $socialButtons-bg-color;
+          border: none;
+          margin-bottom: 1rem;
+          position: relative;
+          overflow: hidden;
+          transition: .5s;
+          
+          .social__link{
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: .5s 
+          }
+        }
+
+       .social:hover{
+         background-color: $contact-hover-color;
+        //  flex-basis: 42%;
+            
+       }
+
+       .social:hover .social__link{
+        color: $footerContact-bg-color;
+
+       }
+      }
+
+
+    }
   }
 }

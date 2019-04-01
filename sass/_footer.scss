@@ -1,0 +1,22 @@
+@import 'variables';
+
+
+footer{
+
+  .footer__container{
+    height: 30vh;
+    color: $footerContact-text-color;
+    background-color: $footerContact-bg-color;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .footer__copy{
+      font-size: .6rem;
+      
+    }
+
+  }
+}
