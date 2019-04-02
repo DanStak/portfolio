@@ -22,7 +22,7 @@ main{
 
       .about__mainText{
         line-height: 1.6rem;
-         letter-spacing: 1px;
+        letter-spacing: 1px;
       }
     }
 
@@ -81,7 +81,7 @@ main{
           flex-basis: 80%;
           text-align: center;
           border-top: 1px solid rgba(0, 0, 0, 0.13);
-          margin-bottom: 2rem;
+          padding-bottom: 2rem;
 
           .fab{
             font-size: 4rem;
@@ -329,8 +329,8 @@ main{
 
   .contact{
     // box-sizing: border-box;
-    border-bottom: 2px solid $contact-border-color;
-    border-top: 2px solid $contact-border-color;
+    border-bottom: 1px solid $contact-hover-color;
+    border-top: 1px solid $contact-hover-color;
     background-color: $footerContact-bg-color;
     // min-height: 80vh;
     position: relative;
@@ -339,7 +339,7 @@ main{
       color: $footerContact-text-color;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      // justify-content: center;
       align-items: center;
 
       .contactWrapper__portrait{

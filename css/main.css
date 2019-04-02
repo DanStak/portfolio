@@ -112,8 +112,7 @@ main .about .about__wrapper .about__h3 {
   text-align: center;
   font-weight: 300;
   font-size: 1.7rem;
-  margin-bottom: 2rem;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 
 main .about .about__wrapper .about__mainText {
@@ -158,8 +157,7 @@ main .skills .skills__section .skills__h3 {
   text-align: center;
   font-weight: 300;
   font-size: 1.7rem;
-  margin-bottom: 2rem;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 
 main .skills .skills__section .skills__wrapperBox {
@@ -179,7 +177,7 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill {
       flex-basis: 80%;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.13);
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .fab {
@@ -291,8 +289,7 @@ main .projects .projects__h3 {
   text-align: center;
   font-weight: 300;
   font-size: 1.7rem;
-  margin-bottom: 2rem;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 
 main .projects .projects__container {
@@ -459,8 +456,8 @@ main .projects .projects__container .projects__example--fourth::after {
 }
 
 main .contact {
-  border-bottom: 2px solid rgba(234, 32, 39, 0.644);
-  border-top: 2px solid rgba(234, 32, 39, 0.644);
+  border-bottom: 1px solid #4AB0D6;
+  border-top: 1px solid #4AB0D6;
   background-color: #1D1E22;
   position: relative;
 }
@@ -472,9 +469,6 @@ main .contact .contact__wrapper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
