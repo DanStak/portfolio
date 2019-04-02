@@ -24,7 +24,7 @@
 
 <body>
   <div id="particles-js"></div>
-  <header>
+  <header date-section='header'>
 
 
     <div class='header__containerH1'>
@@ -39,7 +39,7 @@
 
   <main>
 
-    <article class='about'>
+    <article class='about' date-section='about'>
       <div class='about__wrapper'>
 
         <h3 class='about__h3'>Kilka słow o mnie</h3>
@@ -54,7 +54,7 @@
 
 
 
-    <article class='skills'>
+    <article class='skills' date-section='skills'>
 
       <section class='skills__section'>
         <h3 class='skills__h3'>Jakich technologii używam?</h3>
@@ -137,30 +137,34 @@
 
 
 
-    <article class='projects'>
+    <article class='projects' date-section='projects'>
 
       <h3 class='projects__h3'>Moje projekty</h3>
 
       <div class='projects__container'>
 
-        <div class='projects__example projects__example__first'>
-          <span class='example__title'>budget app</span>
-          <button class='example__show'>sprawdź</button>
+        <div class='projects__example projects__example--first'>
+
+          <span class=' example__title'>budget app</span>
+          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
         </div>
 
-        <div class='projects__example projects__example__second'>
+        <div class='projects__example projects__example--second'>
+
           <span class='example__title'>react-coutries</span>
-          <button class='example__show'>sprawdź</button>
+          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
         </div>
 
-        <div class='projects__example projects__example__third'>
+        <div class='projects__example projects__example--third'>
+
           <span class='example__title'>architectural company page</span>
-          <button class='example__show'>sprawdź</button>
+          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
         </div>
 
-        <div class='projects__example projects__example__fourth'>
+        <div class='projects__example projects__example--fourth'>
+
           <span class='example__title'>stone, paper, scissors game</span>
-          <button class='example__show'>sprawdź</button>
+          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
         </div>
 
       </div>
@@ -170,12 +174,12 @@
 
 
 
-    <article class='contact'>
+    <article class='contact' date-section='contact'>
       <div class='contact__wrapper'>
         <div class='contactWrapper__portrait'>
 
           <figure>
-            <img class='portrait' src='img/DSC_9845.jpg' alt='Damian Stasiak zdjęcie'>
+            <img class='portrait' src='img/portrait.jpg' alt='Damian Stasiak zdjęcie'>
           </figure>
 
         </div>
@@ -187,7 +191,10 @@
 
             <h4 class='informations__h4'>kontakt</h4>
             <div class='informations'><i class="fas fa-phone icons"></i><span>511-106-113</span></div>
-            <div class='informations'><i class="far fa-envelope icons"></i><span>95damian.stasiak@gmail.com</span></div>
+            <div class='informations informations--copy'><i
+                class="far fa-envelope icons"></i><span>95damian.stasiak@gmail.com</span>
+            </div>
+            <div class='informations informations--message'><span class='copy'>Skopiowano email do schowka</span></div>
 
           </div>
 
@@ -222,6 +229,8 @@
 
   <script src="particles.min.js"></script>
   <script src="particles.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

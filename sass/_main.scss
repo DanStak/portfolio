@@ -7,7 +7,7 @@ main{
   .about{
     background-color: $header-bg-color;
     color: $about-text-color;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     
 
     .about__wrapper{
@@ -23,6 +23,25 @@ main{
       .about__mainText{
         line-height: 1.6rem;
          letter-spacing: 1px;
+      }
+    }
+
+    @media(min-width: $first-brake){
+      .about__wrapper{
+        width: 70%;
+
+        .about__h3{
+          font-size: 2rem;
+        }
+      }
+    }
+
+    @media(min-width: $second-brake){
+      .about__wrapper{
+       .about__mainText{
+         letter-spacing: 1px;
+         line-height: 2rem;
+       }
       }
     }
   }
@@ -54,60 +73,68 @@ main{
         flex-wrap: wrap;
         justify-content: space-around;
         -webkit-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
-          -moz-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
-          box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
-      }
+        -moz-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+        box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+      
 
-      .wrapperBox__skill{
-        flex-basis: 80%;
-        text-align: center;
-        border-top: 1px solid rgba(0, 0, 0, 0.13);
-        margin-bottom: 2rem;
+        .wrapperBox__skill{
+          flex-basis: 80%;
+          text-align: center;
+          border-top: 1px solid rgba(0, 0, 0, 0.13);
+          margin-bottom: 2rem;
 
-        .fab{
-          font-size: 4rem;
-          margin: 1rem 0;
-        }
+          .fab{
+            font-size: 4rem;
+            margin: 1rem 0;
+            transition: .4s;
+          }
 
-       .fa-html5,
-       .description--html5{
-          color: #e34f26;
-        }
+          .fa-html5,
+          .description--html5{
+            color: #e34f26;
+          }
 
-        .fa-css3-alt,
-        .description--css3{
-          color: #264de4;
-        }
+          .fa-css3-alt,
+          .description--css3{
+            color: #264de4;
+          }
 
-        .fa-js,
-        .description--js{
-          color: #F0DB4F;
-        }
+          .fa-js,
+          .description--js{
+            color: #F0DB4F;
+          }
 
-        .fa-react,
-        .description--react{
+          .fa-react,
+          .description--react{
            color: #61DBFB;
-        }
+          }
 
-       .fa-sass,
-        .description--sass{
-          color: #CD679A;
-        }
+          .fa-sass,
+          .description--sass{
+            color: #CD679A;
+          }
 
-        .fa-git,
-        .description--git{
-          color: #F1502F;
-        }
+          .fa-git,
+          .description--git{
+            color: #F1502F;
+          }
 
-        .skill__description{
-          display: block;
+          .skill__description{
+            display: block;
            margin-bottom: 1rem;
-        }
+          } 
 
 
-        .skill__text{
-          text-align: justify;
+          .skill__text{
+            text-align: justify;
+          }
         }
+
+        .wrapperBox__skill:hover .fab{
+          transform: rotate(10deg);
+        }
+
+        
       }
     }
 
@@ -118,14 +145,59 @@ main{
       bottom: 0;
       background-color: $projects-bg-color;
     }
+
+    @media(min-width: $first-brake){
+      .skills__section{
+        width: 70%;
+
+        .skills__h3{
+          font-size: 1.8rem;
+        }
+
+        .wrapperBox__skill{
+          flex-basis: 70%;
+
+          .fab{
+            font-size: 5rem;
+          }
+        }
+      }
+    }
+
+    @media(min-width: $second-brake){
+      .skills__section{
+        width: 50%;
+
+        .wrapperBox__skill{
+          flex-basis: 70%;
+
+          .fab{
+            font-size: 5rem;
+          }
+        }
+      }
+    }
+
+    @media(min-width: $third-brake){
+      .skills__section{
+        width: 70%; 
+
+        .skills__wrapperBox{
+          .wrapperBox__skill{
+            flex-basis: 45%;
+          }
+
+        }
+      }
+    }
   }
 
   .projects{
     background-color: $projects-bg-color;
     color: $projects-text-color;
-
-    box-sizing: border-box;
-    padding: 2rem 0 4rem;
+    min-height: 100vh;
+    // box-sizing: border-box;
+    padding: 50px 0 100px;
 
     .projects__h3{
       @include articlesH3();
@@ -148,29 +220,32 @@ main{
 
         .example__title{
           position: absolute;
-          top: 20%;
-          left: -100%;
+          top: -100%;
+          left: 50%;
+          transform: translateX(-50%);
           text-transform: uppercase;
           opacity: 0;
           z-index: 1;
           width: 100%;
           text-align: center;
-          transition: .4s;
+          transition: .4s, opacity .3s .3s;
         }
 
         .example__show{
           position: absolute;
           display: block;
-          bottom: 20%;
-          right: -100%;
+          bottom: -100%;
+          left: 50%;
+          transform: translateX(-50%);          
           z-index: 1;
           text-transform: uppercase;
           border: 2px solid $projects-text-color;
           padding: 10px 15px;
+          cursor: pointer;
           background-color: transparent;
           color: $projects-text-color;
-          opacity: 1;
-          transition: .4s;
+          opacity: 0;
+          transition: .4s, opacity .3s .3s;
         }
 
         .example__show:hover{
@@ -178,6 +253,8 @@ main{
           background-color: $example-main-color;
           color: white;
         }
+
+       
       }
 
       .projects__example:hover::after{
@@ -185,50 +262,80 @@ main{
       }
 
       .projects__example:hover .example__title{
-        left: 50%;
-        transform: translateX(-50%);
+        top: 20%;
         opacity: 1;
       }
 
       .projects__example:hover .example__show{
-        right: 50%;
-        transform: translateX(50%);
+        bottom: 20%;
         opacity: 1;
       }
+
+      .projects__example--first::after{
+        @include projectImg();
+        background-image: url(../img/budget-app.PNG);
+      }
+
+      .projects__example--second::after{
+        @include projectImg();
+        background-image: url(../img/images.jpg);
+      }
+
+      .projects__example--third::after{
+        @include projectImg();
+        background-image: url(../img/tapeciarnia.pl-103003_drzewa_chmury.jpg);
+      }
+
+      .projects__example--fourth::after{
+        @include projectImg();
+        background-image: url(../img/tapeciarnia.pl-95748_jesien_las.jpg);
+      }
       
+    }
 
-      .projects__example__first::after{
-        @include projectImg();        
-        background-image: url(../img/budget-app.png);
+    @media(min-width: $first-brake){
+      .projects__h3{
+        font-size: 2rem;
       }
 
-      .projects__example__second::after{
-        @include projectImg();
-        background-image: url(../img/budget-app.png);
-      }
+      .projects__container{
+        width: 60%;
 
-      .projects__example__third::after{
-        @include projectImg();
-        background-image: url(../img/budget-app.png);
+        .projects__example{
+          height: 220px;
+        }
       }
+    }
 
-      .projects__example__fourth::after{
-        @include projectImg();
-        background-image: url(../img/budget-app.png);
-      }
-
+    @media(min-width: $second-brake){
       
+      .projects__container{
+        width: 90%;
+
+        .projects__example{
+          flex-basis: 50%;
+          height: 250px;
+        }
+      }
+    }
+
+    @media(min-width: $third-brake){
+      .projects__container{
+        width: 70%;
+      }
     }
   }
   
 
   .contact{
+    // box-sizing: border-box;
+    border-bottom: 2px solid $contact-border-color;
+    border-top: 2px solid $contact-border-color;
+    background-color: $footerContact-bg-color;
+    // min-height: 80vh;
+    position: relative;
+
     .contact__wrapper{
-      // height: 70vh;
-      box-sizing: border-box;
-      // padding-top: 50px;
-      border-bottom: 2px solid $footerContact-text-color;
-      background-color: $footerContact-bg-color;
       color: $footerContact-text-color;
       display: flex;
       flex-wrap: wrap;
@@ -277,16 +384,23 @@ main{
             text-align: left;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
-            ;
+            
 
             .icons{
               margin-right: 1rem;
               font-size: 1rem;
               transition: .3s;
             }
-
            
+          }
+
+          .informations--copy{
+            cursor: pointer;
+          }
+
+          .informations--message{
+            display: none;
+            color: $contact-hover-color;
           }
 
           .informations::after{
@@ -356,5 +470,45 @@ main{
 
 
     }
+
+    @media(min-width: $first-brake){
+      .contact__wrapper{
+        .contactWrapper__portrait{
+          flex-basis: 190px;
+        }
+      }
+      
+    }
+
+    @media(min-width: $second-brake){
+      
+        .contact__wrapper{
+          justify-content: center;
+
+          .contactWrapper__portrait{
+            margin-right: 50px;
+            flex-basis: 220px;
+          }
+
+          .contactWrapper__informations{
+            flex-basis: 40%;
+
+            .informations__manage{
+              .informations__h4{
+                font-size: 1.4rem;
+              }
+              .informations{
+                font-size: 1.2rem;
+              }
+            }
+          }
+
+          .contactWrapper__social{
+            margin-top: 100px;
+          }
+        }
+      
+    }
+      
   }
 }
