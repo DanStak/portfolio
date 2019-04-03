@@ -34,7 +34,7 @@ main{
         letter-spacing: 1px;
         display: block;
         transform: scale(0);
-        transition: .6s;
+        transition: .6s cubic-bezier(0.45, 0.41, 0, 1.6);;
       }
 
       .about__mainText.active{
@@ -157,7 +157,8 @@ main{
             display: block;
             margin-bottom: 1rem;
             transform: scale(0);
-            transition: .4s .4s;
+            transition: transform .4s .4s;
+            transition: letter-spacing .4s;
           } 
 
 
@@ -174,6 +175,10 @@ main{
 
         .wrapperBox__skill:hover .fab{
           transform: rotate(10deg);
+        }
+
+        .wrapperBox__skill:hover .skill__description{
+          letter-spacing: 2px;
         }
 
         
@@ -268,7 +273,7 @@ main{
         position: relative;
         overflow: hidden;
         transform: scale(0);
-        transition: .4s;
+        transition: .4s cubic-bezier(0.45, 0.41, 0, 1.6);;
 
         .example__title{
           position: absolute;
@@ -308,6 +313,8 @@ main{
 
        
       }
+
+      
 
       .projects__example.increase{
         transform: scale(1);
@@ -389,104 +396,134 @@ main{
     border-top: 1px solid $contact-hover-color;
     background-color: $footerContact-bg-color;
     // min-height: 80vh;
-    position: relative;
+    // position: relative;
 
     .contact__wrapper{
       color: $footerContact-text-color;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-height: 80vh;
+      opacity: 0;
+      transition: 1s cubic-bezier(0.45, 0.41, 0, 1.6);
 
-      .contactWrapper__portrait{
-        display: block;
-        flex-basis: 35vw;
-        filter: opacity(80%);
-        margin: 1rem 0;
-        border:none;
+      .contactWrapper__informationsAndPortrait{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .contactWrapper__portrait{
+          // display: block;
+          flex-basis: 35vw;
+          filter: opacity(80%);
+          // margin: 1rem 0;
+          // border:none;
         
 
-        .portrait{
-          width: 100%;
-          border-radius: 5px;
-          background-color: $footerContact-bg-color;
-          -webkit-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
-          -moz-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
-          box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+          .portrait{
+            width: 100%;
+            // border-radius: 5px;
+            // background-color: $footerContact-bg-color;
+            -webkit-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+            -moz-box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+            box-shadow: 0px 0px 66px 27px rgba(74,176,214,0.18);
+          }
         }
-      }
 
-      .contactWrapper__informations{
-        text-align: center;
-        flex-basis: 100%;
-        margin: 1rem 0;
-
-
-        .informations__manage{
+        .contactWrapper__informations{
+          // text-align: center;
+          flex-basis: 100%;
+          margin: 1rem 0;
           display: flex;
           flex-direction: column;
           background-color: $socialButtons-bg-color;
-          
 
-          .informations__h4{
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-          }
+            .informations__h4{
+              text-align: center;
+              text-transform: uppercase;
+              font-size: 1.5rem;
+              margin-bottom: 1rem;
+            }
 
-          .informations{
-            margin: 0 auto 1rem;
-            font-size: .9rem;
-            text-align: left;
-            position: relative;
-            overflow: hidden;
+            .informations{
+              margin: 0 auto 1rem;
+              font-size: .9rem;
+              position: relative;
+              overflow: hidden;
+              padding: 5px 0;
             
 
-            .icons{
-              margin-right: 1rem;
-              font-size: 1rem;
-              transition: .3s;
-            }
+              .icons{
+                margin-right: 1rem;
+                font-size: 1rem;
+                padding-left: 2px;
+                transition: .3s;
+              }
            
-          }
 
-          .informations--copy{
-            cursor: pointer;
-          }
+              @keyframes rotation{
+                0%{
+                  transform: rotate(0deg)
+                }
+                
+                25%{
+                  transform: rotate(20deg)
+                }
 
-          .informations--message{
-            display: none;
-            color: $contact-hover-color;
-          }
+                50%{
+                  transform: rotate(0deg)
+                }
+                75%{
+                  transform: rotate(-20deg)
+                }
+              
+                100%{
+                  transform: rotate(0)
+                }
+              }
+            }
 
-          .informations::after{
-            content: '';
-            display: block;
-            background-color: $contact-hover-color;
-            position: absolute;
-            width: calc(100% + 10px);
-            height: 100%;
-            left: calc(-100% - 10px);
-            bottom: -90%;
-            transition: .5s cubic-bezier(0.45, 0.41, 0, 1.6);
+            .informations--copy{
+              cursor: pointer;
+            }
 
-          }
+            .informations--message{
+              display: none;
+              color: $contact-hover-color;
+            }
 
-          .informations:hover .icons{
-            color: $contact-hover-color;
-          }
+            .informations::after{
+              content: '';
+              display: block;
+              background-color: $contact-hover-color;
+              position: absolute;
+              width: calc(100% + 10px);
+              height: 100%;
+              left: calc(-100% - 10px);
+              bottom: -90%;
+              transition: .5s cubic-bezier(0.45, 0.41, 0, 1.6);
 
-          .informations:hover::after{
-            left: 0
-          }
+            }
+
+            .informations:hover .icons{
+              color: $contact-hover-color;
+              animation: rotation .3s infinite;
+            }
+
+            .informations:hover::after{
+              left: 0
+            }
          
+          
         }
-
-        
       }
 
+      
+
       .contactWrapper__social{
-        flex-basis: 50%;
+        width: 80%;
         display: flex;
         justify-content: space-around;
 
@@ -529,9 +566,20 @@ main{
 
     @media(min-width: $first-brake){
       .contact__wrapper{
-        .contactWrapper__portrait{
-          flex-basis: 190px;
+        .contactWrapper__informationsAndPortrait{
+          width: 80%;
+          margin: 0 auto;
+
+          .contactWrapper__portrait{
+            flex-basis: 150px;
+            margin-top: 50px;
+          }
         }
+
+        .contactWrapper__social{
+          width: 60%;
+        }
+        
       }
       
     }
@@ -539,32 +587,45 @@ main{
     @media(min-width: $second-brake){
       
         .contact__wrapper{
-          justify-content: center;
 
-          .contactWrapper__portrait{
-            margin-right: 50px;
-            flex-basis: 220px;
-          }
+          .contactWrapper__informationsAndPortrait{
+            background-color: $socialButtons-bg-color;
+            .contactWrapper__portrait{
+              margin-bottom: 50px;
+              margin-right: 50px;
+              flex-basis: 220px;
+            }
 
-          .contactWrapper__informations{
-            flex-basis: 40%;
-
-            .informations__manage{
-              .informations__h4{
+            .contactWrapper__informations{
+              background-color: transparent;
+              flex-basis: 50%;
+                .informations__h4{
                 font-size: 1.4rem;
-              }
-              .informations{
-                font-size: 1.2rem;
-              }
+                }
+                .informations{
+                  font-size: 1.2rem;
+                  .fas{
+                    font-size: 1.4rem;
+                  }
+                  .far{
+                    font-size: 1.4rem;
+                  }
+                } 
             }
           }
-
           .contactWrapper__social{
             margin-top: 100px;
           }
         }
-      
     }
-      
+    
+    @media(min-width: $third-brake){
+      .contact__wrapper{
+        .contactWrapper__informationsAndPortrait{
+          width: 70%;
+        }
+      }
+     
+    }
   }
 }

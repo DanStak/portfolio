@@ -84,11 +84,19 @@ const example__thirdStart = example__thirdOffset + example__thirdWidth
 const example__fourthStart = example__fourthOffset + example__fourthWidth
 
 
+//contact
+const contact__wrapper = document.querySelector('.contact__wrapper');
+const contact__wrapperOffset = contact__wrapper.offsetTop;
+const contact__wrapperWidth = contact__wrapper.offsetHeight;
+const contact__wrapperStart = contact__wrapperOffset + contact__wrapperWidth;
+
+
 
 window.addEventListener('scroll', () => {
   const windowScroll = window.scrollY;
   const windowHeight = window.innerHeight;
   const windowBottom = windowScroll + windowHeight;
+  const windowWidth = window.innerWidth;
 
   if (about__h3Start < windowBottom) {
     about__h3.classList.add('active');
@@ -104,7 +112,6 @@ window.addEventListener('scroll', () => {
   }
 
   if (html5Start < windowBottom) {
-    // html5.classList.add('slide');
     faHtml5.classList.add('slideFromTop');
     descHtml5.classList.add('increase');
     textHtml5.classList.add('increase');
@@ -139,17 +146,33 @@ window.addEventListener('scroll', () => {
     descGit.classList.add('increase');
     textGit.classList.add('increase');
   }
+  if (windowWidth >= 900) {
+    if (example__fourthStart < windowBottom) {
+      example__first.classList.add('increase');
+      example__second.style.transition = '.3s .3s';
+      example__second.classList.add('increase');
+      example__third.style.transition = '.3s .6s';
+      example__third.classList.add('increase');
+      example__fourth.style.transition = '.3s .9s';
+      example__fourth.classList.add('increase');
+    }
+  } else if (windowWidth < 900) {
+    if (example__firstStart < windowBottom) {
+      example__first.classList.add('increase');
+    }
+    if (example__secondStart < windowBottom) {
+      example__second.classList.add('increase');
+    }
+    if (example__thirdStart < windowBottom) {
+      example__third.classList.add('increase');
+    }
+    if (example__fourthStart < windowBottom) {
+      example__fourth.classList.add('increase');
+    }
+  }
 
-  if (example__firstStart < windowBottom) {
-    example__first.classList.add('increase');
-  }
-  if (example__secondStart < windowBottom) {
-    example__second.classList.add('increase');
-  }
-  if (example__thirdStart < windowBottom) {
-    example__third.classList.add('increase');
-  }
-  if (example__fourthStart < windowBottom) {
-    example__fourth.classList.add('increase');
+
+  if (contact__wrapperStart - (contact__wrapperWidth / 2) < windowBottom) {
+    contact__wrapper.style.opacity = '1';
   }
 })
