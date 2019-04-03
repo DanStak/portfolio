@@ -8,6 +8,8 @@ main{
     background-color: $header-bg-color;
     color: $about-text-color;
     padding-bottom: 200px;
+    // position: relative;
+    overflow: hidden;
     
 
     .about__wrapper{
@@ -18,11 +20,25 @@ main{
 
       .about__h3{
         @include articlesH3();
+        position: relative;
+        transform: translateX(-200%);
+        transition: .6s;
+      }
+
+      .about__h3.active{
+        transform: translateX(0);
       }
 
       .about__mainText{
         line-height: 1.6rem;
         letter-spacing: 1px;
+        display: block;
+        transform: scale(0);
+        transition: .6s;
+      }
+
+      .about__mainText.active{
+        transform: scale(1);
       }
     }
 
@@ -48,7 +64,8 @@ main{
 
   .skills{
     color: $skill-text-color;
-    background-color: $main-bg-color;
+    // background-color: $main-bg-color;
+    background-image: linear-gradient(to top, #067092 0%, #4AB0D6 100%);
     position: relative;
 
    
@@ -56,16 +73,25 @@ main{
       z-index: 1;
       width: 80%;      
       margin: 0 auto;
-      border-radius: 10px;
+      // border-radius: 10px;
       border: 1px solid rgba(0, 0, 0, 0.13);
       background-color: #fff;
+      
       position: relative;
       top: -100px;
-
+      opacity: 0;
+      transition: .6s;
+      // overflow: hidden;
 
 
      .skills__h3{
        @include articlesH3();
+       transform: translateY(-100%);
+       transition: .4s .6s;
+      }
+
+      .skills__h3.active{
+        transform: translateY(0);
       }
 
       .skills__wrapperBox{
@@ -82,10 +108,14 @@ main{
           text-align: center;
           border-top: 1px solid rgba(0, 0, 0, 0.13);
           padding-bottom: 2rem;
+          position: relative;
+          overflow: hidden;
+          transition: .4s;
 
           .fab{
             font-size: 4rem;
             margin: 1rem 0;
+            transform: translateY(-150%);
             transition: .4s;
           }
 
@@ -119,14 +149,26 @@ main{
             color: #F1502F;
           }
 
+          .slideFromTop{
+            transform: translateY(0);
+          }
+
           .skill__description{
             display: block;
-           margin-bottom: 1rem;
+            margin-bottom: 1rem;
+            transform: scale(0);
+            transition: .4s .4s;
           } 
 
 
           .skill__text{
             text-align: justify;
+            transform: scale(0);
+            transition: .4s .8s;
+          }
+
+          .increase{
+            transform: scale(1);
           }
         }
 
@@ -136,6 +178,10 @@ main{
 
         
       }
+    }
+
+    .skills__section.active{
+      opacity: 1;
     }
 
     .skill__fill{
@@ -160,6 +206,10 @@ main{
           .fab{
             font-size: 5rem;
           }
+
+          .skill__text{
+            font-size: .9rem;
+          }
         }
       }
     }
@@ -180,7 +230,7 @@ main{
 
     @media(min-width: $third-brake){
       .skills__section{
-        width: 70%; 
+        width: 60%; 
 
         .skills__wrapperBox{
           .wrapperBox__skill{
@@ -217,6 +267,8 @@ main{
         background-position: center;
         position: relative;
         overflow: hidden;
+        transform: scale(0);
+        transition: .4s;
 
         .example__title{
           position: absolute;
@@ -255,6 +307,10 @@ main{
         }
 
        
+      }
+
+      .projects__example.increase{
+        transform: scale(1);
       }
 
       .projects__example:hover::after{
@@ -339,7 +395,7 @@ main{
       color: $footerContact-text-color;
       display: flex;
       flex-wrap: wrap;
-      // justify-content: center;
+      justify-content: center;
       align-items: center;
 
       .contactWrapper__portrait{

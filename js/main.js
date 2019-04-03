@@ -12,6 +12,7 @@ const about__mainTextStart = about__mainTextOffset + about__mainTextWidth;
 
 
 //SKILLS__SECTION
+//sections divs and their offsets
 const skills__section = document.querySelector('.skills__section');
 const skills__h3 = document.querySelector('.skills__h3');
 const skills = document.querySelector('.skills');
@@ -28,19 +29,38 @@ const sassOffset = sass.offsetTop - 100;
 const git = document.querySelector('.wrapperBox__skill--git');
 const gitOffset = git.offsetTop - 100;
 
+//icons
+const faHtml5 = document.querySelector('.fa-html5');
+const faCss3 = document.querySelector('.fa-css3-alt');
+const faJs = document.querySelector('.fa-js');
+const faReact = document.querySelector('.fa-react');
+const faSass = document.querySelector('.fa-sass');
+const faGit = document.querySelector('.fa-git');
+
+//skill__description
+const descHtml5 = document.querySelector('.description--html5');
+const descCss3 = document.querySelector('.description--css3');
+const descJs = document.querySelector('.description--js');
+const descReact = document.querySelector('.description--react');
+const descSass = document.querySelector('.description--sass');
+const descGit = document.querySelector('.description--git');
+
+//skill__text
+const textHtml5 = document.querySelector('.skill__text--html5');
+const textCss3 = document.querySelector('.skill__text--css3');
+const textJs = document.querySelector('.skill__text--js');
+const textReact = document.querySelector('.skill__text--react');
+const textSass = document.querySelector('.skill__text--sass');
+const textGit = document.querySelector('.skill__text--git');
+
+
 const skillsOffset = skills.offsetTop;
 const skillsStart = skillsOffset - 100;
-
 const html5Start = skillsOffset + html5Offset + html5.clientHeight;
-
 const css3Start = skillsOffset + css3Offset + css3.clientHeight;
-
 const jsStart = skillsOffset + jsOffset + js.clientHeight;
-
 const reactStart = skillsOffset + reactOffset + react.clientHeight;
-
 const sassStart = skillsOffset + sassOffset + sass.clientHeight;
-
 const gitStart = skillsOffset + gitOffset + git.clientHeight;
 
 //PROJECTS
@@ -53,7 +73,16 @@ const example__thirdOffset = example__third.offsetTop;
 const example__fourth = document.querySelector('.projects__example--fourth');
 const example__fourthOffset = example__fourth.offsetTop;
 
-console.log(example__firstOffset, example__secondOffset, example__thirdOffset, example__fourthOffset);
+const example__firstWidth = example__first.offsetHeight;
+const example__secondWidth = example__second.offsetHeight;
+const example__thirdWidth = example__third.offsetHeight;
+const example__fourthWidth = example__fourth.offsetHeight;
+
+const example__firstStart = example__firstOffset + example__firstWidth
+const example__secondStart = example__secondOffset + example__secondWidth
+const example__thirdStart = example__thirdOffset + example__thirdWidth
+const example__fourthStart = example__fourthOffset + example__fourthWidth
+
 
 
 window.addEventListener('scroll', () => {
@@ -61,18 +90,66 @@ window.addEventListener('scroll', () => {
   const windowHeight = window.innerHeight;
   const windowBottom = windowScroll + windowHeight;
 
-  // if (about__h3Start < windowBottom) {
-  //   about__h3.style.color = 'red';
-  // }
+  if (about__h3Start < windowBottom) {
+    about__h3.classList.add('active');
+  }
 
-  // if (about__mainTextStart < windowBottom) {
-  //   about__mainText.style.color = 'red';
-  // }
+  if (about__mainTextStart - (about__mainTextWidth / 2) < windowBottom) {
+    about__mainText.classList.add('active');
+  }
 
-  // if (skillsStart + 110 < windowBottom) {
-  //   skills__section.style.backgroundColor = 'red';
-  //   skills__h3.style.color = 'white';
-  // }
+  if (skillsStart + 110 < windowBottom) {
+    skills__section.classList.add('active');
+    skills__h3.classList.add('active');
+  }
 
+  if (html5Start < windowBottom) {
+    // html5.classList.add('slide');
+    faHtml5.classList.add('slideFromTop');
+    descHtml5.classList.add('increase');
+    textHtml5.classList.add('increase');
+  }
 
+  if (css3Start < windowBottom) {
+    faCss3.classList.add('slideFromTop');
+    descCss3.classList.add('increase');
+    textCss3.classList.add('increase');
+  }
+
+  if (jsStart < windowBottom) {
+    faJs.classList.add('slideFromTop');
+    descJs.classList.add('increase');
+    textJs.classList.add('increase');
+  }
+
+  if (reactStart < windowBottom) {
+    faReact.classList.add('slideFromTop');
+    descReact.classList.add('increase');
+    textReact.classList.add('increase');
+  }
+
+  if (sassStart < windowBottom) {
+    faSass.classList.add('slideFromTop');
+    descSass.classList.add('increase');
+    textSass.classList.add('increase');
+  }
+
+  if (gitStart < windowBottom) {
+    faGit.classList.add('slideFromTop');
+    descGit.classList.add('increase');
+    textGit.classList.add('increase');
+  }
+
+  if (example__firstStart < windowBottom) {
+    example__first.classList.add('increase');
+  }
+  if (example__secondStart < windowBottom) {
+    example__second.classList.add('increase');
+  }
+  if (example__thirdStart < windowBottom) {
+    example__third.classList.add('increase');
+  }
+  if (example__fourthStart < windowBottom) {
+    example__fourth.classList.add('increase');
+  }
 })

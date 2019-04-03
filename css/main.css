@@ -99,6 +99,7 @@ main .about {
   background-color: #1D1E22;
   color: #b9b9b9;
   padding-bottom: 200px;
+  overflow: hidden;
 }
 
 main .about .about__wrapper {
@@ -113,11 +114,31 @@ main .about .about__wrapper .about__h3 {
   font-weight: 300;
   font-size: 1.7rem;
   padding: 2rem 0;
+  position: relative;
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+main .about .about__wrapper .about__h3.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 main .about .about__wrapper .about__mainText {
   line-height: 1.6rem;
   letter-spacing: 1px;
+  display: block;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+main .about .about__wrapper .about__mainText.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 @media (min-width: 640px) {
@@ -138,7 +159,8 @@ main .about .about__wrapper .about__mainText {
 
 main .skills {
   color: #1D1E22;
-  background-color: #4AB0D6;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#067092), to(#4AB0D6));
+  background-image: linear-gradient(to top, #067092 0%, #4AB0D6 100%);
   position: relative;
 }
 
@@ -146,11 +168,13 @@ main .skills .skills__section {
   z-index: 1;
   width: 80%;
   margin: 0 auto;
-  border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.13);
   background-color: #fff;
   position: relative;
   top: -100px;
+  opacity: 0;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 main .skills .skills__section .skills__h3 {
@@ -158,6 +182,15 @@ main .skills .skills__section .skills__h3 {
   font-weight: 300;
   font-size: 1.7rem;
   padding: 2rem 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .4s .6s;
+  transition: .4s .6s;
+}
+
+main .skills .skills__section .skills__h3.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 main .skills .skills__section .skills__wrapperBox {
@@ -178,11 +211,17 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill {
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.13);
   padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .fab {
   font-size: 4rem;
   margin: 1rem 0;
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -217,18 +256,40 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .descriptio
   color: #F1502F;
 }
 
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .slideFromTop {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .skill__description {
   display: block;
   margin-bottom: 1rem;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .4s .4s;
+  transition: .4s .4s;
 }
 
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .skill__text {
   text-align: justify;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .4s .8s;
+  transition: .4s .8s;
+}
+
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .increase {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill:hover .fab {
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
+}
+
+main .skills .skills__section.active {
+  opacity: 1;
 }
 
 main .skills .skill__fill {
@@ -253,6 +314,9 @@ main .skills .skill__fill {
   main .skills .skills__section .wrapperBox__skill .fab {
     font-size: 5rem;
   }
+  main .skills .skills__section .wrapperBox__skill .skill__text {
+    font-size: .9rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -270,7 +334,7 @@ main .skills .skill__fill {
 
 @media (min-width: 1024px) {
   main .skills .skills__section {
-    width: 70%;
+    width: 60%;
   }
   main .skills .skills__section .skills__wrapperBox .wrapperBox__skill {
     -ms-flex-preferred-size: 45%;
@@ -310,6 +374,10 @@ main .projects .projects__container .projects__example {
   background-position: center;
   position: relative;
   overflow: hidden;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 main .projects .projects__container .projects__example .example__title {
@@ -350,6 +418,11 @@ main .projects .projects__container .projects__example .example__show:hover {
   border: 2px solid #ea2027;
   background-color: #ea2027;
   color: white;
+}
+
+main .projects .projects__container .projects__example.increase {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 main .projects .projects__container .projects__example:hover::after {
@@ -469,6 +542,9 @@ main .contact .contact__wrapper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
