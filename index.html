@@ -25,43 +25,61 @@
 <body>
 
   <nav>
-    <div class='navigation__logo'>
-      <img class='logoPNG' src='/img/logo.svg'>
+    <div class='nav__container'>
+
+      <div class='navigation__logo'>
+        <img class='logoPNG' src='img/logo.svg'>
+      </div>
+
+
+      <div class='navigation__socialNav'>
+        <a class='socialNav__icon' href="https://pl-pl.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+        <a class='socialNav__icon' href="https://github.com/DanStak" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+
+
+      <ul class='navigation__ul'>
+        <li class='ul__item'><a class='header' href="#">home</a></li>
+        <li class='ul__item'><a class='about' href="#">o mnie</a></li>
+        <li class='ul__item'><a class='skillSection' href="#">co umiem</a></li>
+        <li class='ul__item'><a class='projects' href="#">projekty</a></li>
+        <li class='ul__item'><a class='contact' href="#">kontakt</a></li>
+      </ul>
+
     </div>
-    <div class='navigation__socialNav'>
 
-      <a class='socialNav__icon' href="https://pl-pl.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
-      <a class='socialNav__icon' href="https://github.com/DanStak" target="_blank"><i class="fab fa-github"></i></a>
-
-    </div>
-    <ul class='navigation__ul'>
-      <li class='ul__item'><a href="#">home</a></li>
-      <li class='ul__item'><a href="#">o mnie</a></li>
-      <li class='ul__item'><a href="#">co umiem</a></li>
-      <li class='ul__item'><a href="#">projekty</a></li>
-      <li class='ul__item'><a href="#">kontakt</a></li>
-    </ul>
   </nav>
+
+  <div class='nav__hamburger'>
+    <div class="hamburger__line hamburger__line--1"></div>
+    <div class="hamburger__line hamburger__line--2"></div>
+    <div class="hamburger__line hamburger__line--3"></div>
+  </div>
 
   <div id="particles-js"></div>
 
-  <header date-section='header'>
+  <header data-section='header'>
 
 
     <div class='header__containerH1'>
       <h1 class="header__h1 header__h1--1">Cześć, mam na imię <span class='h1__span'>Damian</span>,</h1>
-      <h3 class='header__h1 header__h1--2'>chcę zostać JUNIOR FRONT-END DEVELOPEREM</h1>
-        <button class='header__button button'>Sprawdź <i class="fas fa-arrow-right"></i></i></button>
+      <h3 class='header__h1 header__h1--2'>chcę zostać JUNIOR FRONT-END DEVELOPEREM</h3>
+      <button class='header__button button '>Sprawdź <i class="fas fa-arrow-right"></i></i></button>
     </div>
 
+    <div class='header__logo'>
+      <figure>
+        <img class="headerLogo__main" src="img/logo.svg">
+      </figure>
+    </div>
 
 
   </header>
 
   <main>
 
-    <article class='about' date-section='about'>
+    <article class='about' data-section='about'>
       <div class='about__wrapper'>
 
         <h3 class='about__h3'>Kilka słow o mnie</h3>
@@ -76,7 +94,7 @@
 
 
 
-    <article class='skills' date-section='skills'>
+    <article class='skills' data-section='skillSection'>
 
       <section class='skills__section'>
         <h3 class='skills__h3'>Jakich technologii używam?</h3>
@@ -98,8 +116,10 @@
             <p class='skill__text skill__text--css3'>Konstruuję poprawne selektory, nienadużywam i nie dubluję
               właściwości, staram się
               tworzyć poprawne i przejrzyste style w taki sposób, by inne osoby które będą ze mną współpracować nie
-              miały problemu w odnalezieniu się. Znam FLEXBOX-a i korzystam z jego dobrodziejstw, szczególnie pomocnych
-              podczas tworzenia responsywnych witryn. W swoich projektach wykorzystuję równiez metodologię BEM, z którą
+              miały problemu w odnalezieniu się. Znam FLEXBOX-a i korzystam z jego dobrodziejstw, szczególnie
+              pomocnych
+              podczas tworzenia responsywnych witryn. W swoich projektach wykorzystuję równiez metodologię BEM, z
+              którą
               jednak wciąż się zaznajamiam i dopracowuję sposób jej stosowania. </p>
           </div>
 
@@ -124,7 +144,8 @@
               Potrafię tworzyć komponenty stanowe i bezstanowe, a także wiem w jakich sytuacjach zachodzi potrzeba
               konstruowania jednego lub drugiego. Rozumiem mechanizm, zasady i metody związane z cyklem życia
               komponentów (z wiedzy tej korzystam w aplikacji REACT-COUNTRIES). Znam mechaniki związane z data flow
-              pomiędzy komponentami, asynchronicznością, oraz zagadnienia związane ze składnią JSX, jak również podstawy
+              pomiędzy komponentami, asynchronicznością, oraz zagadnienia związane ze składnią JSX, jak również
+              podstawy
               biblioteki
               React-Router, a podczas nauki i
               tworzenia projektów wykorzystuję środowisko Create React App.
@@ -135,10 +156,13 @@
           <div class='wrapperBox__skill wrapperBox__skill--sass'>
             <i class="fab fa-sass"></i>
             <span class='skill__description description--sass'>SASS</span>
-            <p class='skill__text skill__text--sass'>Znam składnię SASS i SCSS, jednak najcześniej stosuję tę drugą, z
+            <p class='skill__text skill__text--sass'>Znam składnię SASS i SCSS, jednak najcześniej stosuję tę drugą,
+              z
               uwagi na to że
-              wydaje mi się bardziej przejrzysta i wygodniejsza. W swoich projektach wykorzystuję funkcjonalności które
-              niesie ze sobą preprocesor SASS takie jak importowanie plików, zmienne czy domieszki. Staram się łączyć
+              wydaje mi się bardziej przejrzysta i wygodniejsza. W swoich projektach wykorzystuję funkcjonalności
+              które
+              niesie ze sobą preprocesor SASS takie jak importowanie plików, zmienne czy domieszki. Staram się
+              łączyć
               składnię SCSS z metodologią BEM w celu uzyskania bardziej przejrzystego i zrozumiałego kodu.</p>
 
           </div>
@@ -149,8 +173,10 @@
             <span class='skill__description description--git'>GIT i GitHub</span>
             <p class='skill__text skill__text--git'>W swoich projektach wykorzystuję system kontroli wersji w dość
               niewielkim zakresie
-              jego funkcjonalności, z uwagi na to że uczę się w pojedynkę. Potrafię jednak tworzyć repozytoria lokalne,
-              tworzyć commity i pushować je do repozytoriów zdalnych, klonować repozytoria oraz poruszać się po historii
+              jego funkcjonalności, z uwagi na to że uczę się w pojedynkę. Potrafię jednak tworzyć repozytoria
+              lokalne,
+              tworzyć commity i pushować je do repozytoriów zdalnych, klonować repozytoria oraz poruszać się po
+              historii
               zmian.</p>
 
           </div>
@@ -163,7 +189,7 @@
 
 
 
-    <article class='projects' date-section='projects'>
+    <article class='projects' data-section='projects'>
 
       <h3 class='projects__h3'>Moje projekty</h3>
 
@@ -172,35 +198,58 @@
         <div class='projects__example projects__example--first'>
 
           <span class=' example__title'>budget app</span>
-          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
+          <button class='example__show show--project'><a href=''>zobacz <i class="fas fa-search"></i></a></button>
+          <button class='example__show show--code'><a href=''>kod <i class="fas fa-code"></i></a></button>
         </div>
 
         <div class='projects__example projects__example--second'>
 
           <span class='example__title'>react-coutries</span>
-          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
+          <button class='example__show show--project'><a href=''>zobacz <i class="fas fa-search"></i></a></button>
+          <button class='example__show show--code'><a href=''>kod <i class="fas fa-code"></i></a></button>
         </div>
 
         <div class='projects__example projects__example--third'>
 
           <span class='example__title'>architectural company page</span>
-          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
+          <button class='example__show show--project'><a href=''>zobacz <i class="fas fa-search"></i></a></button>
+          <button class='example__show show--code'><a href=''>kod <i class="fas fa-code"></i></a></button>
         </div>
 
         <div class='projects__example projects__example--fourth'>
 
           <span class='example__title'>stone, paper, scissors game</span>
-          <button class='example__show'>sprawdź <i class="fas fa-search"></i></button>
+          <button class='example__show show--project'><a href=''>zobacz <i class="fas fa-search"></i></a></button>
+          <button class='example__show show--code'><a href=''>kod <i class="fas fa-code"></i></a></button>
         </div>
 
       </div>
+
+      <!-- <section class=project__popup>
+        <div class='popup__container'>
+          <div class='containerPopup__img'>
+            <figure>
+              <img class='projectImg__popup' src="img/budget-app.PNG" alt="budget app screen">
+            </figure>
+          </div>
+          <div class='containerPopup__text'>
+            <span class='text'>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla nesciunt possimus eum aspernatur eos quod sunt aperiam asperiores est! Expedita quo tempora iste quia qui, saepe dignissimos incidunt culpa ex.
+            </span>
+          </div>
+          <div>
+            <button class='containerPopup__buttons'>zobacz kod</button>
+            <button class='containerPopup__buttons'>zobacz efekt</button>
+          </div>
+        </div>
+      </section> -->
 
 
     </article>
 
 
 
-    <article class='contact' date-section='contact'>
+    <article class='contact' data-section='contact'>
       <div class='contact__wrapper'>
 
         <div class='contactWrapper__informationsAndPortrait'>
@@ -218,11 +267,15 @@
 
 
             <h4 class='informations__h4'>kontakt</h4>
+
             <div class='informations'><i class="fas fa-phone icons"></i><span>511-106-113</span></div>
+
             <div class='informations informations--copy'><i
-                class="far fa-envelope icons"></i><span>95damian.stasiak@gmail.com</span>
+                class="far fa-envelope icons"></i><span class='copyMe'>95damian.stasiak@gmail.com</span>
             </div>
-            <div class='informations informations--message'><span class='copy'>Skopiowano email do schowka</span>
+
+            <div class='informations informations--message'><span
+                class='copy'>Skopiowano email do schowka</span>
             </div>
 
 

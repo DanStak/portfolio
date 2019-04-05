@@ -22,13 +22,15 @@ $contact-border-color: rgba(234, 32, 39, 0.644);
 
 $nav-hover-color: #4AB0D6;
 $nav-bg-color: rgba(46, 47, 51, 0.904);
-$nav-text-color: #1D1E22;
+$nav-bg-colorMobile: rgb(46, 47, 51);
+// $nav-text-color: #1D1E22;
 
 //breakpoints
 
 $first-brake: 640px;
 $second-brake: 900px;
 $third-brake: 1024px;
+$navSwitch-brake: 723px;
 
 
 

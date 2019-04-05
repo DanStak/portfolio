@@ -83,12 +83,24 @@ const example__secondStart = example__secondOffset + example__secondWidth
 const example__thirdStart = example__thirdOffset + example__thirdWidth
 const example__fourthStart = example__fourthOffset + example__fourthWidth
 
+const allProjects = document.querySelectorAll('.projects__container .projects__example');
+
 
 //contact
 const contact__wrapper = document.querySelector('.contact__wrapper');
 const contact__wrapperOffset = contact__wrapper.offsetTop;
 const contact__wrapperWidth = contact__wrapper.offsetHeight;
 const contact__wrapperStart = contact__wrapperOffset + contact__wrapperWidth;
+
+
+//navigation
+const nav = document.querySelector('nav');
+const hamburger = document.querySelector('.nav__hamburger');
+const nav__container = document.querySelector('.nav__container');
+
+
+//TIMER
+const timer = document.querySelector('.footer__timer')
 
 
 
@@ -98,14 +110,17 @@ window.addEventListener('scroll', () => {
   const windowBottom = windowScroll + windowHeight;
   const windowWidth = window.innerWidth;
 
+  //ABOUT__H3 EFFECT
   if (about__h3Start < windowBottom) {
     about__h3.classList.add('active');
   }
 
+  //ABOUT__MAINTEXT EFFECT
   if (about__mainTextStart - (about__mainTextWidth / 2) < windowBottom) {
     about__mainText.classList.add('active');
   }
 
+  // SKILLS EFFECTS
   if (skillsStart + 110 < windowBottom) {
     skills__section.classList.add('active');
     skills__h3.classList.add('active');
@@ -146,15 +161,15 @@ window.addEventListener('scroll', () => {
     descGit.classList.add('increase');
     textGit.classList.add('increase');
   }
+
+
+  // PROJECTS EFFECTS
   if (windowWidth >= 900) {
     if (example__fourthStart < windowBottom) {
-      example__first.classList.add('increase');
-      example__second.style.transition = '.3s .3s';
-      example__second.classList.add('increase');
-      example__third.style.transition = '.3s .6s';
-      example__third.classList.add('increase');
-      example__fourth.style.transition = '.3s .9s';
-      example__fourth.classList.add('increase');
+      allProjects.forEach((project, index) => {
+        project.style.transition = `.3s ${index / 5}s`;
+        project.classList.add('increase');
+      });
     }
   } else if (windowWidth < 900) {
     if (example__firstStart < windowBottom) {
@@ -171,8 +186,113 @@ window.addEventListener('scroll', () => {
     }
   }
 
-
+  // CONTACT EFFECT
   if (contact__wrapperStart - (contact__wrapperWidth / 2) < windowBottom) {
     contact__wrapper.style.opacity = '1';
+  }
+
+
+  // NAV APPEAR EFFECT
+  if (windowWidth > 723) {
+    if (windowScroll > windowHeight - 1) {
+      nav.style.transform = 'translateY(0)';
+    } else {
+      nav.style.transform = 'translateY(-100%)';
+    }
+  }
+
+})
+
+
+// ON/OFF MOBILE NAV
+toggleNav = () => {
+  hamburger.classList.toggle('active');
+  nav__container.classList.toggle('mask');
+  nav.classList.toggle('display');
+}
+
+hamburger.addEventListener('click', toggleNav);
+
+
+
+
+// NAVIGATION SCROLLING
+
+const links = document.querySelectorAll('.navigation__ul .ul__item a ');
+const show = document.querySelector('.header__button');
+
+goDown = (e) => {
+  e.preventDefault();
+  let time = 500;
+
+  let section = `[data-section = ${e.target.classList}]`;
+
+  if (e.target.classList.contains('header__button')) {
+    section = '[data-section = about]';
+    time = 1000;
+  }
+
+  let scrollTo = $(section).offset().top
+
+  if (section === '[data-section = skillSection]') {
+    scrollTo -= 120;
+  }
+
+  $('body, html').animate({
+    scrollTop: scrollTo
+  }, time);
+
+  if (nav__container.classList.contains('mask')) {
+    nav__container.classList.remove('mask');
+    hamburger.classList.remove('active');
+    nav.classList.remove('display');
+  }
+}
+
+
+links.forEach(link => link.addEventListener('click', goDown));
+show.addEventListener('click', goDown);
+
+
+
+//TIMER IN FOOTER SECTION
+
+let mSeconds = 0;
+let minutes = 0;
+let hours = 0;
+
+const count = () => {
+  mSeconds++;
+  timer.textContent = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${mSeconds < 10 ? '0' + mSeconds : mSeconds}`;
+
+
+  if (mSeconds > 58) {
+    minutes++;
+    mSeconds = -1;
+  }
+
+  if (minutes > 59) {
+    hours++;
+    minutes = -1;
+  }
+}
+setInterval(count, 1000);
+
+
+//COPY EMAIL TO CLIPBOARD
+const copy = document.querySelector('.informations--copy');
+const info = document.querySelector('.informations--message');
+copy.addEventListener('click', (e) => {
+  const textarea = document.createElement('textarea')
+  textarea.value = '95damian.stasiak@gmail.com';
+  textarea.style.transform = 'translate(-9999px)';
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+  info.style.opacity = '1';
+
+  if (info.style.opacity === '1') {
+    setTimeout(() => info.style.opacity = '0', 3000);
   }
 })

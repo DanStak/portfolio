@@ -6,32 +6,36 @@ header{
   height: 100vh;
   background-color: $header-bg-color;
   color: $header-h-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
 
   .header__containerH1{
-    position: absolute;
+    // position: absolute;
     // width: 100%;
     box-sizing: border-box;
     padding: 0 20px;
     text-align: center;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%);
+    // top: 25%;
+    // left: 50%;
+    // transform: translate(-50%);
     z-index: 1;
     
 
     .header__h1--1{
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
 
-    .h1__span{
-      color: $header-span-color;
-      letter-spacing: 2px;
-      font-size: 1.4rem;
-      font-weight: 400;
+      .h1__span{
+        color: $header-span-color;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
     }
-   }
 
    .header__h1--2{
      font-size: .9rem;
@@ -39,37 +43,55 @@ header{
    }
 
    .header__button{
-    margin-top: 4rem;
-    background-color: transparent;
-    border: 1px solid #fff;
-    padding: 5px 10px;
-    color: white;
-    cursor: pointer;
-    position: relative;
-    font-size: 1rem;
-    transition: .2s;
+     margin-top: 2rem;
+     background-color: transparent;
+     border: 1px solid #fff;
+     padding: 5px 10px;
+     color: white;
+     cursor: pointer;
+     position: relative;
+     font-size: 1rem;
+     transition: .2s;
 
 
-    .fa-arrow-right{
-      transform: rotate(0);
-      transition: .2s;
-      
+     .fa-arrow-right{
+       transform: rotate(0);
+       transition: .2s;
+     }
+    }
+
+    .header__button:hover{
+      background-color: $header-span-color;
+      border: 1px solid $header-span-color;
+    }
+
+    .header__button:hover .fa-arrow-right{
+      transform: rotate(90deg);
+      // color: #EA2027;
     }
   }
 
+  .header__logo{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 9;
+    position: relative;
+    margin-top: 2rem;
 
-  .header__button:hover{
-    background-color: $header-span-color;
-    border: 1px solid $header-span-color;
+    .headerLogo__main{
+      height: 90%;
+      // width: auto;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
-  .header__button:hover .fa-arrow-right{
-    transform: rotate(90deg);
-    // color: #EA2027;
-  }
-  }
-
-  @media(min-width: $first-brake){
+  @media(min-width: $second-brake){
     .header__containerH1{
       .header__h1--1{
         font-size: 1.7rem;
