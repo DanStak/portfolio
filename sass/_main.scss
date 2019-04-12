@@ -362,17 +362,17 @@ main{
 
       .projects__example--second::after{
         @include projectImg();
-        background-image: url(../img/images.jpg);
+        background-image: url(../img/react-countries.PNG);
       }
 
       .projects__example--third::after{
         @include projectImg();
-        background-image: url(../img/tapeciarnia.pl-103003_drzewa_chmury.jpg);
+        background-image: url(../img/rwd-page.PNG);
       }
 
       .projects__example--fourth::after{
         @include projectImg();
-        background-image: url(../img/tapeciarnia.pl-95748_jesien_las.jpg);
+        background-image: url(../img/stone-paper-scisorist.PNG);
       }
       
     }
