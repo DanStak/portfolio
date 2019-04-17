@@ -775,8 +775,8 @@ main .contact .contact__wrapper .contactWrapper__social {
 }
 
 main .contact .contact__wrapper .contactWrapper__social .social {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   padding: 10px 0;
   background-color: #2E2F33;
   border: none;
