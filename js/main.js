@@ -284,7 +284,7 @@ const copy = document.querySelector('.informations--copy');
 const info = document.querySelector('.informations--message');
 copy.addEventListener('click', (e) => {
   const textarea = document.createElement('textarea')
-  textarea.value = '95damian.stasiak@gmail.com';
+  textarea.value = 'stas.damian95@gmail.com';
   textarea.style.transform = 'translate(-9999px)';
   document.body.appendChild(textarea);
   textarea.select();
