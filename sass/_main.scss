@@ -256,6 +256,19 @@ main{
 
     .projects__h3{
       @include articlesH3();
+
+      .projects__h3-blue{
+        color: $main-bg-color
+      }
+    }
+
+    .experience__h3{
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.5rem;
+      padding: 2rem 0;
+      width: 100%;
+      text-align: center;
     }
 
     .projects__container{
@@ -264,9 +277,23 @@ main{
       display: flex;
       flex-wrap: wrap;
 
+      .projects__example--container{
+        flex-basis: 100%;
+        margin: 0 5px 5px 0;
+      }
+
+      .projects__example--info{
+        width: 100%;
+        height: 80px;
+        border-top: 2px solid $main-bg-color;
+        background-color: $project-container-color;
+      }
+
       .projects__example{
         flex-basis: 100%;
         // margin-bottom: 2rem;
+        // margin: 0 5px 5px 0;
+        box-sizing: border-box;
         height: 200px;
         background-size: cover;
         background-position: center;
@@ -293,10 +320,10 @@ main{
           display: block;
           bottom: -100%;
           z-index: 1;
-          border: 2px solid $projects-text-color;
-          padding: 10px 0;
+          border: 1px solid $projects-text-color;
+          // padding: 10px 0;
           width: 100px;
-          height: 41px;
+          // height: 41px;
           background-color: transparent;
           opacity: 0;
           transition: .4s, opacity .3s .3s;
@@ -309,6 +336,7 @@ main{
             display: block;
             width: 100%;
             height: 100%;
+            padding: 10px 0;
           }
         }
 
@@ -322,9 +350,14 @@ main{
           transform: translateX(-50%);
         }
 
+        .show--gallery{
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
         .example__show:hover{
-          border: 2px solid $example-main-color;
-          background-color: $example-main-color;
+          border: 1px solid $main-bg-color;
+          background-color: $main-bg-color;
           color: white;
         }
 
@@ -374,6 +407,27 @@ main{
         @include projectImg();
         background-image: url(../img/stone-paper-scisorist.PNG);
       }
+
+      .projects__example--exp1::after{
+        @include projectImg();
+        background-position: unset;
+        background-image: url(../img/iJunior/logo.png);
+      }
+
+      .projects__example--exp2::after{
+        @include projectImg();
+        background-image: url(../img/Gama/logo.jpg);
+      }
+
+      .projects__example--exp3::after{
+        @include projectImg();
+        background-image: url(../img/HTT/3.PNG);
+      }
+
+      .projects__example--exp4::after{
+        @include projectImg();
+        background-image: url(../img/alpha.PNG);
+      }
       
     }
 
@@ -395,9 +449,14 @@ main{
       
       .projects__container{
         width: 90%;
+        justify-content: center;
+
+        .projects__example--container{
+          flex-basis: 48%;
+        }
 
         .projects__example{
-          flex-basis: 50%;
+          flex-basis: 48%;
           height: 250px;
         }
       }

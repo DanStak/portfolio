@@ -417,6 +417,15 @@ main .projects .projects__h3 .projects__h3-blue {
   color: #4AB0D6;
 }
 
+main .projects .experience__h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 2rem 0;
+  width: 100%;
+  text-align: center;
+}
+
 main .projects .projects__container {
   width: 80%;
   margin: 0 auto;
@@ -427,9 +436,24 @@ main .projects .projects__container {
       flex-wrap: wrap;
 }
 
+main .projects .projects__container .projects__example--container {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 0 5px 5px 0;
+}
+
+main .projects .projects__container .projects__example--info {
+  width: 100%;
+  height: 80px;
+  border-top: 2px solid #4AB0D6;
+  background-color: #ffffff;
+}
+
 main .projects .projects__container .projects__example {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 200px;
   background-size: cover;
   background-position: center;
@@ -461,10 +485,8 @@ main .projects .projects__container .projects__example .example__show {
   display: block;
   bottom: -100%;
   z-index: 1;
-  border: 2px solid #b9b9b9;
-  padding: 10px 0;
+  border: 1px solid #b9b9b9;
   width: 100px;
-  height: 41px;
   background-color: transparent;
   opacity: 0;
   -webkit-transition: .4s, opacity .3s .3s;
@@ -479,6 +501,7 @@ main .projects .projects__container .projects__example .example__show a {
   display: block;
   width: 100%;
   height: 100%;
+  padding: 10px 0;
 }
 
 main .projects .projects__container .projects__example .show--project {
@@ -493,9 +516,15 @@ main .projects .projects__container .projects__example .show--code {
           transform: translateX(-50%);
 }
 
+main .projects .projects__container .projects__example .show--gallery {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 main .projects .projects__container .projects__example .example__show:hover {
-  border: 2px solid #ea2027;
-  background-color: #ea2027;
+  border: 1px solid #4AB0D6;
+  background-color: #4AB0D6;
   color: white;
 }
 
@@ -582,6 +611,67 @@ main .projects .projects__container .projects__example--fourth::after {
   background-image: url(../img/stone-paper-scisorist.PNG);
 }
 
+main .projects .projects__container .projects__example--exp1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-position: unset;
+  background-image: url(../img/iJunior/logo.png);
+}
+
+main .projects .projects__container .projects__example--exp2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/Gama/logo.jpg);
+}
+
+main .projects .projects__container .projects__example--exp3::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/HTT/3.PNG);
+}
+
+main .projects .projects__container .projects__example--exp4::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url(../img/alpha.PNG);
+}
+
 @media (min-width: 640px) {
   main .projects .projects__h3 {
     font-size: 2rem;
@@ -597,10 +687,17 @@ main .projects .projects__container .projects__example--fourth::after {
 @media (min-width: 900px) {
   main .projects .projects__container {
     width: 90%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .projects .projects__container .projects__example--container {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
   }
   main .projects .projects__container .projects__example {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
     height: 250px;
   }
 }
@@ -963,7 +1060,6 @@ nav {
   pointer-events: none;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  background-color: red;
 }
 
 nav .nav__container {

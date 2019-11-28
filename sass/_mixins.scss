@@ -3,6 +3,9 @@
   font-weight: 300;
   font-size: 1.7rem;
   padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
 }
 
 @mixin projectImg(){

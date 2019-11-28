@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="pl">
 
 <head>
@@ -21,14 +22,18 @@
 
 
 
+    <base href="/">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <link rel="stylesheet" href="./sass/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"  media="screen" />
+
 </head>
 
 <body>
 
-  <nav>
+  <nav class="navigation">
     <div class='nav__container'>
 
       <div class='navigation__logo'>
@@ -185,17 +190,18 @@
 
     <article class='projects' data-section='projects'>
 
-      <h3 class='projects__h3'>Moje projekty</h3>
+      <h3 class='projects__h3'>Wybrane <p class="projects__h3-blue">&nbsp; projekty</p> </h3>
 
       <div class='projects__container'>
 
         <div class='projects__example projects__example--first'>
-
           <span class=' example__title'>budget app</span>
           <button
-            class='example__show show--project'><a href='https://danstak.github.io/budget-app/' target="_blank">zobacz <i class="fas fa-search"></i></a></button>
+            class='example__show show--project'><a href='https://danstak.github.io/budget-app/' target="_blank">zobacz <i class="fas fa-search"></i></a>
+          </button>
           <button
-            class='example__show show--code'><a href='https://github.com/DanStak/budget-app' target="_blank">kod <i class="fas fa-code"></i></a></button>
+             class='example__show show--code'><a href='https://github.com/DanStak/budget-app' target="_blank">kod <i class="fas fa-code"></i></a>
+          </button>
         </div>
 
         <div class='projects__example projects__example--second'>
@@ -224,6 +230,82 @@
           <button
             class='example__show show--code'><a href='https://github.com/DanStak/STONE-PAPER-SCISSORS-GAME' target="_blank">kod <i class="fas fa-code"></i></a></button>
         </div>
+
+        <h3 class='experience__h3'>Doświadczenie</h3>
+
+        <div class="projects__example--container">
+          <div class='projects__example projects__example--exp1'>
+            <span class='example__title'>Aplikacja mobilna iJunior</span>
+            <button class='example__show show--gallery'>
+                <a target="_blank" data-fancybox="gallery" href="./img/iJunior/logo.png">
+                  zobacz  <i class="fas fa-images"></i>
+                </a>
+
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s1.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s2.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s3.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s4.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s5.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s6.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s7.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s8.png"></a>
+            </button>
+          </div>
+          <div class="projects__example--info">
+            <div class="example__techContainer">
+              <span>TECHNOLOGIA</span>
+              <span>React-native</span>
+            </div>
+
+            <div class="example__descriptionContainer">
+              <span>OPIS</span>
+              <p>
+                Aplikacja mobilna dla nauczycieli i rodziców służąca monitorowaniu statusu ucznia oraz zarządzania płatnościami.
+              </p>
+            </div>
+          </div>
+        </div>
+          <div class='projects__example projects__example--exp2'>
+            <span class='example__title'>Aplikacja mobilna Gama</span>
+            <button class='example__show show--gallery'>
+              <a data-fancybox="gallery1" href="./img/Gama/logo.jpg" target="_blank">
+                zobacz  <i class="fas fa-images"></i>
+              </a>
+
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s1.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s2.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s3.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s4.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s5.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s6.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s7.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s8.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s9.png"></a>
+              <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s10.png"></a>
+
+            </button>
+          </div>
+
+          <div class='projects__example projects__example--exp3'>
+            <span class='example__title'>CMS stisla Head2Toe</span>
+            <button class='example__show show--gallery'>
+              <a data-fancybox="gallery2" href="./img/HTT/1.PNG" target="_blank">
+                zobacz  <i class="fas fa-images"></i>
+              </a>
+
+              <a style="display: none;" data-fancybox="gallery2" href="./img/HTT/2.PNG"></a>
+              <a style="display: none;" data-fancybox="gallery2" href="./img/HTT/3.PNG"></a>
+
+            </button>
+          </div>
+
+          <div class='projects__example projects__example--exp4'>
+            <span class='example__title'>Progresive web app Alpha</span>
+            <button
+              class='example__show show--gallery'><a href='https://alpha.akanza.pl/' target="_blank">zobacz  <i class="fas fa-search"></i></a>
+            </button>
+          </div>
+
 
       </div>
 
@@ -312,6 +394,15 @@
         <span class="footer__greating">Dzięki za poświęcony czas!</span>
         <span class="footer__copy">&copy 2019 Damian Stasiak</span>
       </div>
+
+      <div style="height: 200px;">
+        <form id="sendMailForm">
+          <input type="text" id="yourMail"/>
+          <input type="text" id="mailContent"/>
+          <button id="sendMail">wyślij</button>
+        </form>
+      </div>
+
     </footer>
 
   </main>
@@ -321,6 +412,20 @@
   <script src="particles.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="js/galleries.js"></script>
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+  </script>
+
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("user_XiKvwvhUd5PwK9B6zhNM5");
+    })();
+  </script>
+
+  <script src="js/sendMail.js"></script>
 </body>
 
 </html>
