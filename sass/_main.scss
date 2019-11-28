@@ -280,19 +280,55 @@ main{
       .projects__example--container{
         flex-basis: 100%;
         margin: 0 5px 5px 0;
+        overflow: hidden;
+        border-radius: 3px;
+        border: 1px solid $projects-bg-color;
+        transition: .5s ease-in;
+      }
+
+      .projects__example--container:hover{
+        border: 1px solid $main-bg-color;
       }
 
       .projects__example--info{
         width: 100%;
-        height: 80px;
-        border-top: 2px solid $main-bg-color;
+        height: 70px;
         background-color: $project-container-color;
+        display: flex;
+        flex-wrap: wrap;
+
+
+        .example__container{
+          flex-basis: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #a3a0a0;
+
+          .example__techContainer--header{
+            font-size: .8rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+          }
+
+          .example__techContainer--content{
+            font-size: .7rem;
+            padding: 5px 10px;
+            text-align: center;
+            font-weight: 100;
+          }
+        }
+      }
+
+      .projects__example--border{
+        margin: 0 10px 10px 0;
+        border-radius: 3px;
+        border: 1px solid $projects-bg-color;
       }
 
       .projects__example{
         flex-basis: 100%;
         // margin-bottom: 2rem;
-        // margin: 0 5px 5px 0;
         box-sizing: border-box;
         height: 200px;
         background-size: cover;
@@ -300,7 +336,7 @@ main{
         position: relative;
         overflow: hidden;
         transform: scale(0);
-        transition: .4s cubic-bezier(0.45, 0.41, 0, 1.6);;
+        transition: .4s cubic-bezier(0.45, 0.41, 0, 1.6);
 
         .example__title{
           position: absolute;
@@ -372,6 +408,10 @@ main{
 
       .projects__example.increase{
         transform: scale(1);
+      }
+
+      .projects__example--border:hover{
+        border: 1px solid $main-bg-color;
       }
 
       .projects__example:hover::after{

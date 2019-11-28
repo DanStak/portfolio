@@ -440,13 +440,61 @@ main .projects .projects__container .projects__example--container {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   margin: 0 5px 5px 0;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid #1D1E22;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+}
+
+main .projects .projects__container .projects__example--container:hover {
+  border: 1px solid #4AB0D6;
 }
 
 main .projects .projects__container .projects__example--info {
   width: 100%;
-  height: 80px;
-  border-top: 2px solid #4AB0D6;
-  background-color: #ffffff;
+  height: 70px;
+  background-color: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .projects .projects__container .projects__example--info .example__container {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #a3a0a0;
+}
+
+main .projects .projects__container .projects__example--info .example__container .example__techContainer--header {
+  font-size: .8rem;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+main .projects .projects__container .projects__example--info .example__container .example__techContainer--content {
+  font-size: .7rem;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: 100;
+}
+
+main .projects .projects__container .projects__example--border {
+  margin: 0 10px 10px 0;
+  border-radius: 3px;
+  border: 1px solid #1D1E22;
 }
 
 main .projects .projects__container .projects__example {
@@ -535,6 +583,10 @@ main .projects .projects__container .projects__example .example__show:hover a {
 main .projects .projects__container .projects__example.increase {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+main .projects .projects__container .projects__example--border:hover {
+  border: 1px solid #4AB0D6;
 }
 
 main .projects .projects__container .projects__example:hover::after {
