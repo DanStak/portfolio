@@ -22,7 +22,7 @@
 
 
 
-    <base href="/">
+    <!-- <base href="/"> -->
 
   <!-- CSS -->
   <!-- <link rel="stylesheet" href="css/main.css"> -->
@@ -387,35 +387,48 @@
     <article class='contact' data-section='contact'>
       <div class='contact__wrapper'>
 
-        <div class='contactWrapper__informationsAndPortrait'>
-          <div class='contactWrapper__portrait'>
+          <div class='contactWrapper__informationsAndPortrait'>
 
-            <figure>
-              <img class='portrait' src='img/portrait.jpg' alt='Damian Stasiak zdjęcie'>
-            </figure>
+            <div class='contactWrapper__portrait'>
 
-          </div>
+              <figure>
+                <img class='portrait' src='img/portrait.jpg' alt='Damian Stasiak zdjęcie'>
+              </figure>
 
-
-          <div class='contactWrapper__informations'>
-
-
-
-            <h4 class='informations__h4'>kontakt</h4>
-
-            <div class='informations'><i class="fas fa-phone icons"></i><span>511-106-113</span></div>
-
-            <div class='informations informations--copy'><i
-                class="far fa-envelope icons"></i><span class='copyMe'>stas.damian95@gmail.com</span>
-            </div>
-
-            <div class='informations informations--message'><span
-                class='copy'>Skopiowano email do schowka</span>
             </div>
 
 
+            <div class='contactWrapper__informations'>
+                <h4 class='informations__h4'>kontakt</h4>
+
+                <div class='informations'><i class="fas fa-phone icons"></i><span>511-106-113</span></div>
+
+                <div class='informations informations--copy'><i
+                    class="far fa-envelope icons"></i><span class='copyMe'>stas.damian95@gmail.com</span>
+                </div>
+
+                <div class='informations informations--message'><span
+                    class='copy'>Skopiowano email do schowka</span>
+                </div>
+              </div>
+
+              <!-- Form to sending emails -->
+          
+          <form id="sendMailForm" class="contactWrapper_form">
+              ​
+            <div class="form__inputs">
+              <input type="text" id="yourName" placeholder="imię lub firma" class="form__input form__input--marginRight"/>
+              <input type="text" id="yourMail" placeholder="email" class="form__input form__input--marginLeft"/>
+            </div>
+              
+            <textarea type="text" placeholder="wiadomość" id="mailContent" class="form__textarea"></textarea>
+              ​
+            <button id="sendMail" class="form__senButton">wyślij</button>
+              ​
+          </form>
+
           </div>
-        </div>
+
 
 
 
@@ -445,14 +458,7 @@
         <span class="footer__greating">Dzięki za poświęcony czas!</span>
         <span class="footer__copy">&copy 2019 Damian Stasiak</span>
       </div>
-
-      <div style="height: 200px;">
-        <form id="sendMailForm">
-          <input type="text" id="yourMail"/>
-          <input type="text" id="mailContent"/>
-          <button id="sendMail">wyślij</button>
-        </form>
-      </div>
+        
 
     </footer>
 
@@ -463,7 +469,7 @@
   <script src="particles.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src="js/main.js"></script>
-  <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
   <script src="js/galleries.js"></script>
 
   <script type="text/javascript"

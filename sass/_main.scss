@@ -17,6 +17,7 @@ main{
       width: 80%;
       text-align: justify;
       margin: 0 auto;
+      background-color: red;
 
       .about__h3{
         @include articlesH3();
@@ -526,6 +527,7 @@ main{
       align-items: center;
       min-height: 80vh;
       opacity: 0;
+      margin-top: 1rem;
       transition: 1s cubic-bezier(0.45, 0.41, 0, 1.6);
 
       .contactWrapper__informationsAndPortrait{
@@ -533,6 +535,51 @@ main{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+
+        .contactWrapper_form{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          width: 80%;
+          margin: 0 auto;
+          justify-content: space-between;
+          margin-bottom: 3rem;
+
+          .form__inputs{
+            flex-basis: 100%;
+            display: flex;
+            // flex-wrap: wrap;
+            flex-direction: column;
+
+            .form__input{
+              flex: 1;
+              background-color: $socialButtons-bg-color;
+              border: none;
+              padding: 12px 12px;
+              margin-top: 1rem;
+              color: $projects-text-color;
+            }
+          }
+
+          .form__textarea{
+            flex-basis: 100%;
+            margin: 1rem 0;
+            background-color: $socialButtons-bg-color;
+            border: none;
+            padding: 12px 12px;
+            height: 100px;
+            color: $projects-text-color;
+          }
+
+          .form__senButton{
+            padding: 5px 16px;
+            margin: 0;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            font-size: 1.1rem;
+          }
+        }
 
         .contactWrapper__portrait{
           flex-basis: 35vw;
@@ -689,11 +736,36 @@ main{
 
     }
 
+    @media(min-width: $input-break){
+      .contact__wrapper{
+        .contactWrapper__informationsAndPortrait{
+          .contactWrapper_form{
+            .form__inputs{
+              flex-direction: row;
+              
+              .form__input--marginRight{
+                margin-right: .5rem;
+              }
+
+              .form__input--marginLeft{
+                margin-left: .5rem;
+              }
+            }
+          }
+        }
+      }
+      
+    }
+
     @media(min-width: $first-brake){
       .contact__wrapper{
         .contactWrapper__informationsAndPortrait{
           width: 80%;
           margin: 0 auto;
+
+          .contactWrapper_form{
+            width: 100%;
+          }
 
           .contactWrapper__portrait{
             flex-basis: 150px;
@@ -715,6 +787,20 @@ main{
 
           .contactWrapper__informationsAndPortrait{
             background-color: $socialButtons-bg-color;
+
+            .contactWrapper_form{
+              width: 80%;
+              .form__inputs{
+                .form__input{
+                  background-color: $header-bg-color;
+                }
+              }
+
+              .form__textarea{
+                background-color: $header-bg-color;
+              }
+            }
+
             .contactWrapper__portrait{
               margin-bottom: 50px;
               margin-right: 50px;

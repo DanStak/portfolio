@@ -135,6 +135,7 @@ main .about .about__wrapper {
   width: 80%;
   text-align: justify;
   margin: 0 auto;
+  background-color: red;
 }
 
 main .about .about__wrapper .about__h3 {
@@ -783,6 +784,7 @@ main .contact .contact__wrapper {
           align-items: center;
   min-height: 80vh;
   opacity: 0;
+  margin-top: 1rem;
   -webkit-transition: 1s cubic-bezier(0.45, 0.41, 0, 1.6);
   transition: 1s cubic-bezier(0.45, 0.41, 0, 1.6);
 }
@@ -799,6 +801,67 @@ main .contact .contact__wrapper .contactWrapper__informationsAndPortrait {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs .form__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #2E2F33;
+  border: none;
+  padding: 12px 12px;
+  margin-top: 1rem;
+  color: #b9b9b9;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__textarea {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 1rem 0;
+  background-color: #2E2F33;
+  border: none;
+  padding: 12px 12px;
+  height: 100px;
+  color: #b9b9b9;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton {
+  padding: 5px 16px;
+  margin: 0;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.1rem;
 }
 
 main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper__portrait {
@@ -980,10 +1043,28 @@ main .contact .contact__wrapper .contactWrapper__social .social:hover .social__l
   color: #1D1E22;
 }
 
+@media (min-width: 720px) {
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs .form__input--marginRight {
+    margin-right: .5rem;
+  }
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs .form__input--marginLeft {
+    margin-left: .5rem;
+  }
+}
+
 @media (min-width: 640px) {
   main .contact .contact__wrapper .contactWrapper__informationsAndPortrait {
     width: 80%;
     margin: 0 auto;
+  }
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form {
+    width: 100%;
   }
   main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper__portrait {
     -ms-flex-preferred-size: 150px;
@@ -998,6 +1079,15 @@ main .contact .contact__wrapper .contactWrapper__social .social:hover .social__l
 @media (min-width: 900px) {
   main .contact .contact__wrapper .contactWrapper__informationsAndPortrait {
     background-color: #2E2F33;
+  }
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form {
+    width: 80%;
+  }
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs .form__input {
+    background-color: #1D1E22;
+  }
+  main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__textarea {
+    background-color: #1D1E22;
   }
   main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper__portrait {
     margin-bottom: 50px;
