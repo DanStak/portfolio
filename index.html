@@ -292,7 +292,7 @@
           <div class="projects__example--info">
             <div class="example__container example__techContainer">
               <span class='example__techContainer--header'>TECHNOLOGIE</span>
-              <p class='example__techContainer--content'>React-native</p>
+              <p class='example__techContainer--content'>React-native, TypeScript</p>
             </div>
   
             <!-- <div class="example__container example__descriptionContainer">
@@ -407,7 +407,7 @@
                     class="far fa-envelope icons"></i><span class='copyMe'>stas.damian95@gmail.com</span>
                 </div>
 
-                <div class='informations informations--message'><span
+                <div class='informations informations--message informations-messageDisplay'><span
                     class='copy'>Skopiowano email do schowka</span>
                 </div>
               </div>
@@ -462,6 +462,19 @@
 
     </footer>
 
+    <!-- add class displayModal to display it -->
+    <div class="modal__container">
+      <section class="modal__mainBody ">
+        <span class="mainBody__text informations--copy">Ups, coś poszło nie tak, spróbuj ponownie za chwilę lub skopiuj <button class="copy--mail">stas.damian95@gmail.com</button> i napisz do mnie bezpośrednio!</span>
+        <button class="mainBody__dismiss">Ok</button>
+
+        <div class='mainBody__infoCopy informations--message informations-messageDisplay'>
+          <span>Skopiowano email do schowka</span>
+        </div>
+      </section>
+
+    </div>
+
   </main>
 
 
@@ -478,7 +491,7 @@
 
   <script type="text/javascript">
     (function(){
-        emailjs.init("user_XiKvwvhUd5PwK9B6zhNM5");
+        emailjs.init("user_xoY1nXxr0HGURzjWqdpYU");
     })();
   </script>
 

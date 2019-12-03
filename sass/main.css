@@ -135,7 +135,6 @@ main .about .about__wrapper {
   width: 80%;
   text-align: justify;
   margin: 0 auto;
-  background-color: red;
 }
 
 main .about .about__wrapper .about__h3 {
@@ -862,6 +861,14 @@ main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contac
   border: 1px solid white;
   color: white;
   font-size: 1.1rem;
+  cursor: pointer;
+  -webkit-transition: 0.5s cubic-bezier(0.45, 0.41, 0, 1.6);
+  transition: 0.5s cubic-bezier(0.45, 0.41, 0, 1.6);
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton:hover {
+  background-color: #4AB0D6;
+  border: 1px solid #4AB0D6;
 }
 
 main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper__portrait {
@@ -1126,6 +1133,104 @@ main .contact .contact__wrapper .contactWrapper__social .social:hover .social__l
 @media (min-width: 1024px) {
   main .contact .contact__wrapper .contactWrapper__informationsAndPortrait {
     width: 70%;
+  }
+}
+
+main .modal__container {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
+main .displayModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .displayModal .modal__mainBody {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #1D1E22;
+  position: relative;
+}
+
+main .displayModal .modal__mainBody .mainBody__infoCopy {
+  position: absolute;
+  color: #4AB0D6;
+  font-size: .5rem;
+  font-weight: bold;
+  bottom: 35%;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: .6s linear;
+  transition: .6s linear;
+}
+
+main .displayModal .modal__mainBody .mainBody__text {
+  font-size: .8rem;
+  line-height: 1.5rem;
+}
+
+main .displayModal .modal__mainBody .mainBody__text .copy--mail {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  -webkit-transition: .6s ease-in;
+  transition: .6s ease-in;
+  font-weight: bold;
+}
+
+main .displayModal .modal__mainBody .mainBody__text .copy--mail:hover {
+  color: #4AB0D6;
+}
+
+main .displayModal .modal__mainBody .mainBody__dismiss {
+  background-color: #4AB0D6;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  main .modal__container .modal__mainBody {
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .modal__container .modal__mainBody {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
   }
 }
 

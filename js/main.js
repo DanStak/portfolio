@@ -280,19 +280,40 @@ setInterval(count, 1000);
 
 
 //COPY EMAIL TO CLIPBOARD
-const copy = document.querySelector('.informations--copy');
-const info = document.querySelector('.informations--message');
-copy.addEventListener('click', (e) => {
-  const textarea = document.createElement('textarea')
-  textarea.value = 'stas.damian95@gmail.com';
-  textarea.style.transform = 'translate(-9999px)';
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textarea);
-  info.style.opacity = '1';
+// const copy = document.querySelectorAll('.informations--copy');
+// const info = document.querySelector('.informations--message');
+// copy.addEventListener('click', (e) => {
+//   const textarea = document.createElement('textarea')
+//   textarea.value = 'stas.damian95@gmail.com';
+//   textarea.style.transform = 'translate(-9999px)';
+//   document.body.appendChild(textarea);
+//   textarea.select();
+//   document.execCommand("copy");
+//   document.body.removeChild(textarea);
+//   info.style.opacity = '1';
 
-  if (info.style.opacity === '1') {
-    setTimeout(() => info.style.opacity = '0', 3000);
-  }
+//   if (info.style.opacity === '1') {
+//     setTimeout(() => info.style.opacity = '0', 3000);
+//   }
+// })
+
+const mails = document.querySelectorAll('.informations--copy');
+const info = document.querySelectorAll('.informations-messageDisplay');
+mails.forEach(mail=>{
+  mail.addEventListener('click', (e) => {
+    const textarea = document.createElement('textarea')
+    textarea.value = 'stas.damian95@gmail.com';
+    textarea.style.transform = 'translate(-9999px)';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    
+    info.forEach(item =>{
+      item.style.opacity = '1';
+      setTimeout(()=>{
+        item.style.opacity = '0';
+      }, 3000)
+    })
+  })
 })

@@ -17,7 +17,6 @@ main{
       width: 80%;
       text-align: justify;
       margin: 0 auto;
-      background-color: red;
 
       .about__h3{
         @include articlesH3();
@@ -578,6 +577,13 @@ main{
             border: 1px solid white;
             color: white;
             font-size: 1.1rem;
+            cursor: pointer;
+            transition: .5s cubic-bezier(0.45, 0.41, 0, 1.6);
+          }
+
+          .form__senButton:hover{
+            background-color: $main-bg-color;
+            border: 1px solid $main-bg-color;
           }
         }
 
@@ -844,6 +850,90 @@ main{
         }
       }
      
+    }
+  }
+
+  .modal__container{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background-color: $modal-blackOpacity;
+  }
+
+  .displayModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal__mainBody{
+      background-color: $header-h-color;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      flex-basis: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $skill-text-color;
+      position: relative;
+
+      .mainBody__infoCopy{
+        position: absolute;
+        color: $header-span-color;
+        font-size: .5rem;
+        font-weight: bold;
+        bottom: 35%;
+        pointer-events: none;
+        opacity: 0;
+        transition: .6s linear;
+
+      }
+      
+      .mainBody__text{
+        font-size: .8rem;
+        line-height: 1.5rem;
+        
+        .copy--mail{
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+          transition: .6s ease-in;
+          font-weight: bold;
+        }
+
+        .copy--mail:hover{
+          color: $header-span-color;
+        }
+      }
+
+      .mainBody__dismiss{
+        background-color: $header-span-color;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        color: $header-h-color;
+        margin-top: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media(min-width: $first-brake){
+    .modal__container{
+      .modal__mainBody{
+        flex-basis: 60%;
+      }
+    }
+  }
+
+  @media(min-width: $third-brake){
+    .modal__container{
+      .modal__mainBody{
+        flex-basis: 40%;
+      }
     }
   }
 }
