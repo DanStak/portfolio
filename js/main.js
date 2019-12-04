@@ -28,6 +28,10 @@ const sass = document.querySelector('.wrapperBox__skill--sass');
 const sassOffset = sass.offsetTop - 100;
 const git = document.querySelector('.wrapperBox__skill--git');
 const gitOffset = git.offsetTop - 100;
+const typescript = document.querySelector('.wrapperBox__skill--typescript');
+const typescriptOffset = typescript.offsetTop - 100;
+const redux = document.querySelector('.wrapperBox__skill--redux');
+const reduxOffset = redux.offsetTop - 100;
 
 //icons
 const faHtml5 = document.querySelector('.fa-html5');
@@ -36,6 +40,8 @@ const faJs = document.querySelector('.fa-js');
 const faReact = document.querySelector('.fa-react');
 const faSass = document.querySelector('.fa-sass');
 const faGit = document.querySelector('.fa-git');
+const pngTypescript = document.querySelector('.pngTypescript');
+const pngRedux = document.querySelector('.pngRedux');
 
 //skill__description
 const descHtml5 = document.querySelector('.description--html5');
@@ -44,16 +50,11 @@ const descJs = document.querySelector('.description--js');
 const descReact = document.querySelector('.description--react');
 const descSass = document.querySelector('.description--sass');
 const descGit = document.querySelector('.description--git');
-
-//skill__text
-const textHtml5 = document.querySelector('.skill__text--html5');
-const textCss3 = document.querySelector('.skill__text--css3');
-const textJs = document.querySelector('.skill__text--js');
-const textReact = document.querySelector('.skill__text--react');
-const textSass = document.querySelector('.skill__text--sass');
-const textGit = document.querySelector('.skill__text--git');
+const descTypescript = document.querySelector('.description--typescript');
+const descRedux = document.querySelector('.description--redux');
 
 
+//calculating pixels
 const skillsOffset = skills.offsetTop;
 const skillsStart = skillsOffset - 100;
 const html5Start = skillsOffset + html5Offset + html5.clientHeight;
@@ -62,28 +63,54 @@ const jsStart = skillsOffset + jsOffset + js.clientHeight;
 const reactStart = skillsOffset + reactOffset + react.clientHeight;
 const sassStart = skillsOffset + sassOffset + sass.clientHeight;
 const gitStart = skillsOffset + gitOffset + git.clientHeight;
+const typescriptStart = skillsOffset + typescriptOffset + typescript.clientHeight;
+const reduxStart = skillsOffset + reduxOffset + redux.clientHeight;
 
 //PROJECTS
 const example__first = document.querySelector('.projects__example--first');
 const example__firstOffset = example__first.offsetTop;
+
 const example__second = document.querySelector('.projects__example--second');
 const example__secondOffset = example__second.offsetTop;
+
 const example__third = document.querySelector('.projects__example--third');
 const example__thirdOffset = example__third.offsetTop;
+
 const example__fourth = document.querySelector('.projects__example--fourth');
 const example__fourthOffset = example__fourth.offsetTop;
+
+const example__commercialFirst = document.querySelector('.projects__example--exp1Container');
+const example__commercialFirstOffset = example__commercialFirst.offsetTop;
+
+const example__commercialSecond = document.querySelector('.projects__example--exp2Container');
+const example__commercialSecondOffset = example__commercialSecond.offsetTop;
+
+const example__commercialThird = document.querySelector('.projects__example--exp3Container');
+const example__commercialThirdOffset = example__commercialThird.offsetTop;
+
+const example__commercialForth = document.querySelector('.projects__example--exp4Container');
+const example__commercialForthOffset = example__commercialForth.offsetTop;
 
 const example__firstWidth = example__first.offsetHeight;
 const example__secondWidth = example__second.offsetHeight;
 const example__thirdWidth = example__third.offsetHeight;
 const example__fourthWidth = example__fourth.offsetHeight;
+const example__firstCommercialWidt = example__commercialFirst.offsetHeight;
+const example__secondCommercialWidt = example__commercialSecond.offsetHeight;
+const example__thirdCommercialWidt = example__commercialThird.offsetHeight;
+const example__forthCommercialWidt = example__commercialForth.offsetHeight;
 
-const example__firstStart = example__firstOffset + example__firstWidth
-const example__secondStart = example__secondOffset + example__secondWidth
-const example__thirdStart = example__thirdOffset + example__thirdWidth
-const example__fourthStart = example__fourthOffset + example__fourthWidth
+const example__firstStart = example__firstOffset + example__firstWidth;
+const example__secondStart = example__secondOffset + example__secondWidth;
+const example__thirdStart = example__thirdOffset + example__thirdWidth;
+const example__fourthStart = example__fourthOffset + example__fourthWidth;
+const example__firstComercialStart = example__commercialFirstOffset + example__firstCommercialWidt;
+const example__secondComercialStart = example__commercialSecondOffset + example__secondCommercialWidt;
+const example__thirdComercialStart = example__commercialThirdOffset + example__thirdCommercialWidt;
+const example__forthComercialStart = example__commercialForthOffset + example__forthCommercialWidt;
 
 const allProjects = document.querySelectorAll('.projects__container .projects__example');
+const allProjectsCommercials = document.querySelectorAll('.projects__container .projects__example--container');
 
 
 //contact
@@ -129,37 +156,49 @@ window.addEventListener('scroll', () => {
   if (html5Start < windowBottom) {
     faHtml5.classList.add('slideFromTop');
     descHtml5.classList.add('increase');
-    textHtml5.classList.add('increase');
+    // textHtml5.classList.add('increase');
   }
 
   if (css3Start < windowBottom) {
     faCss3.classList.add('slideFromTop');
     descCss3.classList.add('increase');
-    textCss3.classList.add('increase');
+    // textCss3.classList.add('increase');
   }
 
   if (jsStart < windowBottom) {
     faJs.classList.add('slideFromTop');
     descJs.classList.add('increase');
-    textJs.classList.add('increase');
+    // textJs.classList.add('increase');
   }
 
   if (reactStart < windowBottom) {
     faReact.classList.add('slideFromTop');
     descReact.classList.add('increase');
-    textReact.classList.add('increase');
+    // textReact.classList.add('increase');
   }
 
   if (sassStart < windowBottom) {
     faSass.classList.add('slideFromTop');
     descSass.classList.add('increase');
-    textSass.classList.add('increase');
+    // textSass.classList.add('increase');
   }
 
   if (gitStart < windowBottom) {
     faGit.classList.add('slideFromTop');
     descGit.classList.add('increase');
-    textGit.classList.add('increase');
+    // textGit.classList.add('increase');
+  }
+
+  if (typescriptStart < windowBottom) {
+    pngTypescript.classList.add('slideFromTop');
+    descTypescript.classList.add('increase');
+    // textGit.classList.add('increase');
+  }
+
+  if (reduxStart < windowBottom) {
+    pngRedux.classList.add('slideFromTop');
+    descRedux.classList.add('increase');
+    // textGit.classList.add('increase');
   }
 
 
@@ -171,6 +210,14 @@ window.addEventListener('scroll', () => {
         project.classList.add('increase');
       });
     }
+
+    if(example__forthComercialStart < windowBottom){
+      allProjectsCommercials.forEach((project, index) =>{
+        project.style.transition = `.3s ${index/5}s`;
+        project.classList.add('increase');
+      })
+    }
+    
   } else if (windowWidth < 900) {
     if (example__firstStart < windowBottom) {
       example__first.classList.add('increase');
@@ -183,6 +230,18 @@ window.addEventListener('scroll', () => {
     }
     if (example__fourthStart < windowBottom) {
       example__fourth.classList.add('increase');
+    }
+    if(example__firstComercialStart < windowBottom){
+      example__commercialFirst.classList.add('increase')
+    }
+    if(example__secondComercialStart < windowBottom){
+      example__commercialSecond.classList.add('increase')
+    }
+    if(example__thirdComercialStart < windowBottom){
+      example__commercialThird.classList.add('increase')
+    }
+    if(example__forthComercialStart < windowBottom){
+      example__commercialForth.classList.add('increase')
     }
   }
 

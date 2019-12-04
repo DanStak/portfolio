@@ -107,17 +107,23 @@ main{
           flex-basis: 80%;
           text-align: center;
           border-top: 1px solid rgba(0, 0, 0, 0.13);
-          padding-bottom: 2rem;
+          // padding-bottom: 2rem;
           position: relative;
           overflow: hidden;
           transition: .4s;
 
           .fab{
-            font-size: 4rem;
+            font-size: 3rem;
             margin: 1rem 0;
             transform: translateY(-150%);
             transition: .4s;
           }
+
+          .png{
+            transform: translateY(-150%);
+            transition: .4s;
+          }
+
 
           .fa-html5,
           .description--html5{
@@ -153,12 +159,26 @@ main{
             transform: translateY(0);
           }
 
+          .skill__imageIcon{
+            width: 66px;
+            margin: 1rem
+          }
+
+          .description--typescript{
+            color: #007ACC;
+          }
+
+          .description--redux{
+            color: #7749BD;
+          }
+
           .skill__description{
             display: block;
             margin-bottom: 1rem;
             transform: scale(0);
             transition: transform .4s .4s;
             transition: letter-spacing .4s;
+            font-weight: bold;
           } 
 
 
@@ -283,7 +303,16 @@ main{
         overflow: hidden;
         border-radius: 3px;
         border: 1px solid $projects-bg-color;
-        transition: .5s ease-in;
+        transform: scale(0);
+        transition: .4s cubic-bezier(0.45, 0.41, 0, 1.6);
+
+        .projects__exampleCommercial{
+          transform: scale(1);
+        }
+      }
+
+      .projects__example--container.increase{
+        transform: scale(1);
       }
 
       .projects__example--container:hover{

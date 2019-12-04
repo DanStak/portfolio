@@ -252,7 +252,6 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill {
       flex-basis: 80%;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.13);
-  padding-bottom: 2rem;
   position: relative;
   overflow: hidden;
   -webkit-transition: .4s;
@@ -260,8 +259,15 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill {
 }
 
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .fab {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 1rem 0;
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .png {
   -webkit-transform: translateY(-150%);
           transform: translateY(-150%);
   -webkit-transition: .4s;
@@ -303,6 +309,19 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .slideFromT
           transform: translateY(0);
 }
 
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .skill__imageIcon {
+  width: 66px;
+  margin: 1rem;
+}
+
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .description--typescript {
+  color: #007ACC;
+}
+
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .description--redux {
+  color: #7749BD;
+}
+
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .skill__description {
   display: block;
   margin-bottom: 1rem;
@@ -314,6 +333,7 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .skill__des
   transition: transform .4s .4s, -webkit-transform .4s .4s;
   -webkit-transition: letter-spacing .4s;
   transition: letter-spacing .4s;
+  font-weight: bold;
 }
 
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill .skill__text {
@@ -443,8 +463,20 @@ main .projects .projects__container .projects__example--container {
   overflow: hidden;
   border-radius: 3px;
   border: 1px solid #1D1E22;
-  -webkit-transition: .5s ease-in;
-  transition: .5s ease-in;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.4s cubic-bezier(0.45, 0.41, 0, 1.6);
+  transition: 0.4s cubic-bezier(0.45, 0.41, 0, 1.6);
+}
+
+main .projects .projects__container .projects__example--container .projects__exampleCommercial {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main .projects .projects__container .projects__example--container.increase {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 main .projects .projects__container .projects__example--container:hover {
