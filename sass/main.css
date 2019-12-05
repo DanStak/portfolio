@@ -354,6 +354,11 @@ main .skills .skills__section .skills__wrapperBox .wrapperBox__skill:hover .fab 
           transform: rotate(10deg);
 }
 
+main .skills .skills__section .skills__wrapperBox .wrapperBox__skill:hover .skill__imageIcon {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
 main .skills .skills__section .skills__wrapperBox .wrapperBox__skill:hover .skill__description {
   letter-spacing: 2px;
 }
@@ -549,6 +554,7 @@ main .projects .projects__container .projects__example .example__title {
   position: absolute;
   top: -100%;
   left: 50%;
+  color: #1D1E22;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   text-transform: uppercase;
@@ -565,7 +571,7 @@ main .projects .projects__container .projects__example .example__show {
   display: block;
   bottom: -100%;
   z-index: 1;
-  border: 1px solid #b9b9b9;
+  border: 2px solid #1D1E22;
   width: 100px;
   background-color: transparent;
   opacity: 0;
@@ -576,12 +582,14 @@ main .projects .projects__container .projects__example .example__show {
 main .projects .projects__container .projects__example .example__show a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #b9b9b9;
+  color: #1D1E22;
   cursor: pointer;
   display: block;
   width: 100%;
   height: 100%;
   padding: 10px 0;
+  -webkit-transition: 1s cubic-bezier(0.45, 0.41, 0, 1.6);
+  transition: 1s cubic-bezier(0.45, 0.41, 0, 1.6);
 }
 
 main .projects .projects__container .projects__example .show--project {
@@ -603,13 +611,41 @@ main .projects .projects__container .projects__example .show--gallery {
 }
 
 main .projects .projects__container .projects__example .example__show:hover {
-  border: 1px solid #4AB0D6;
-  background-color: #4AB0D6;
+  border: 2px solid #1D1E22;
+  background-color: #1D1E22;
   color: white;
 }
 
 main .projects .projects__container .projects__example .example__show:hover a {
   color: white;
+}
+
+main .projects .projects__container .projects__example::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.4s cubic-bezier(0.45, 0.41, 0, 1.6);
+  transition: 0.4s cubic-bezier(0.45, 0.41, 0, 1.6);
+}
+
+main .projects .projects__container .projects__example:hover::before {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+main .projects .projects__container .projects__example::after {
+  opacity: 1;
+}
+
+main .projects .projects__container .projects__example:hover::after {
+  opacity: .5;
 }
 
 main .projects .projects__container .projects__example.increase {
@@ -619,10 +655,6 @@ main .projects .projects__container .projects__example.increase {
 
 main .projects .projects__container .projects__example--border:hover {
   border: 1px solid #4AB0D6;
-}
-
-main .projects .projects__container .projects__example:hover::after {
-  opacity: 0;
 }
 
 main .projects .projects__container .projects__example:hover .example__title {
@@ -753,6 +785,21 @@ main .projects .projects__container .projects__example--exp4::after {
   background-position: center;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  background-image: url(../img/mBiuro/s1.png);
+}
+
+main .projects .projects__container .projects__example--exp5::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   background-image: url(../img/alpha.PNG);
 }
 
@@ -850,6 +897,23 @@ main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contac
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 3rem;
+  position: relative;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__message {
+  color: #8af788;
+  font-size: .6rem;
+  opacity: 0;
+  -webkit-transition: .8s ease-in-out;
+  transition: .8s ease-in-out;
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  text-align: center;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__message--visible {
+  opacity: 1;
 }
 
 main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__inputs {
@@ -896,6 +960,89 @@ main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contac
   cursor: pointer;
   -webkit-transition: 0.5s cubic-bezier(0.45, 0.41, 0, 1.6);
   transition: 0.5s cubic-bezier(0.45, 0.41, 0, 1.6);
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .sendText {
+  display: block;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .invisibleSend {
+  display: none;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .eclipseContainer {
+  display: none;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border-radius: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .eclipseContainer .eclipse {
+  width: 5px;
+  height: 5px;
+  background-color: #b9b9b9;
+  border-radius: 100%;
+  -webkit-animation: PopUp 0.9s ease-in-out infinite;
+          animation: PopUp 0.9s ease-in-out infinite;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .visibleIndicator {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .eclipse:nth-child(1) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .eclipse:nth-child(2) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton .eclipse:nth-child(3) {
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+
+@-webkit-keyframes PopUp {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes PopUp {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 main .contact .contact__wrapper .contactWrapper__informationsAndPortrait .contactWrapper_form .form__senButton:hover {

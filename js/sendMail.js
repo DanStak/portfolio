@@ -2,21 +2,42 @@
 const body = document.querySelector('body')
 //form elements
 const sendFormButton = document.querySelector('#sendMail');
-const mailContentInput = document.querySelector('#mailContent');
-const yourMailInput = document.querySelector('#yourMail');
-const yourNameInput = document.querySelector('#yourName');
+let mailContentInput = document.querySelector('#mailContent');
+let yourMailInput = document.querySelector('#yourMail');
+let yourNameInput = document.querySelector('#yourName');
 //modal
 const modalContainer = document.querySelector('.modal__container');
 const closeModalButton = document.querySelector('.mainBody__dismiss');
 //alert color
 const warningColor = 'hsla(0, 100%, 41%, 0.7)'
+//alert message 
+const allertMessage = document.querySelector('#errorMessage');
+//button switch
+const buttonText = document.querySelector('.sendText');
+const buttonIndicator = document.querySelector('.eclipseContainer')
 
 sendMail = (variables) =>{
   window.emailjs.send('gmail', 'template_RN0dJqfx', variables).then(res => {
-    console.log('Email successfully sent!')
+    console.log(res, "response")
+    allertMessage.classList.add('form__message--visible');
+    yourMailInput.value = '';
+    mailContentInput.value = '';
+    yourNameInput.value = '';
+    switchButton()
+    this.setTimeout(()=>{
+      allertMessage.classList.remove('form__message--visible');
+    }, 5000)
+
   }).catch(err => {
+    console.log(err, "error")
+    switchButton()
     toggleModal()
   })
+}
+
+switchButton = () =>{
+  buttonText.classList.toggle('invisibleSend');
+  buttonIndicator.classList.toggle('visibleIndicator')
 }
 
 toggleModal = () =>{
@@ -45,13 +66,14 @@ checkValues = (e) =>{
     yourNameInput.style.backgroundColor = ''
   }
   
-  if(yourMailInput.value && mailContentInput.value && yourNameInput){
+  if(yourMailInput.value && mailContentInput.value && yourNameInput.value){
     const body = {
       to_name: yourNameInput.value,
       message_html: mailContentInput.value,
       from_name: yourMailInput.value,
       // reply_to: this.state.email
     }
+    switchButton()
     sendMail(body)
   }
 

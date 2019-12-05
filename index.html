@@ -226,7 +226,11 @@
                 <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s5.png"></a>
                 <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s6.png"></a>
                 <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s7.png"></a>
-                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s8.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s9.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s10.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s11.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s12.png"></a>
+                <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s13.png"></a>
             </button>
           </div>
 
@@ -235,13 +239,6 @@
               <span class='example__techContainer--header'>TECHNOLOGIE</span>
               <p class='example__techContainer--content'>React-native</p>
             </div>
-
-            <!-- <div class="example__container example__descriptionContainer">
-              <span class='example__techContainer--header'>OPIS</span>
-              <p class='example__techContainer--content'>
-                Aplikacja mobilna dla nauczycieli i rodziców służąca do monitorowania statusu ucznia oraz zarządzania płatnościami w placówce.
-              </p>
-            </div> -->
           </div>
         </div>
 
@@ -271,7 +268,7 @@
           <div class="projects__example--info">
             <div class="example__container example__techContainer">
               <span class='example__techContainer--header'>TECHNOLOGIE</span>
-              <p class='example__techContainer--content'>React-native, TypeScript</p>
+              <p class='example__techContainer--content'>React-native, TypeScript, Axios, Firebase</p>
             </div>
   
             <!-- <div class="example__container example__descriptionContainer">
@@ -311,10 +308,44 @@
               </div> -->
             </div>
         </div>
-        
+
         <div class="projects__example--container  projects__example--exp4Container">
 
           <div class='projects__example projects__exampleCommercial projects__example--exp4'>
+            <span class='example__title'>Aplikacja mobilna mBiuro</span>
+            <button class='example__show show--gallery'>
+                <a target="_blank" data-fancybox="gallery3" href="./img//mBiuro/s1.png">
+                  zobacz  <i class="fas fa-images"></i>
+                </a>
+
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s2.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s3.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s4.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s5.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s6.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s7.png"></a>
+                <a style="display: none;" data-fancybox="gallery2" href="./img/mBiuro/s8.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s9.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s10.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s11.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s12.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s13.png"></a>
+                <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s14.png"></a>
+                
+            </button>
+          </div>
+
+          <div class="projects__example--info">
+            <div class="example__container example__techContainer">
+              <span class='example__techContainer--header'>TECHNOLOGIE</span>
+              <p class='example__techContainer--content'>React-native</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="projects__example--container  projects__example--exp4Container">
+
+          <div class='projects__example projects__exampleCommercial projects__example--exp5'>
             <span class='example__title'>Progresive web app Alpha</span>
             <button
               class='example__show show--gallery'><a href='https://alpha.akanza.pl/' target="_blank">zobacz  <i class="fas fa-search"></i></a>
@@ -396,7 +427,7 @@
               <!-- Form to sending emails -->
           
           <form id="sendMailForm" class="contactWrapper_form">
-              ​
+            <span id="errorMessage" class="form__message">Wiadomośc wysłana poprawnie.</span>
             <div class="form__inputs">
               <input type="text" id="yourName" placeholder="imię lub firma" class="form__input form__input--marginRight"/>
               <input type="text" id="yourMail" placeholder="email" class="form__input form__input--marginLeft"/>
@@ -404,7 +435,14 @@
               
             <textarea type="text" placeholder="wiadomość" id="mailContent" class="form__textarea"></textarea>
               ​
-            <button id="sendMail" class="form__senButton">wyślij</button>
+            <button id="sendMail" class="form__senButton">
+              <p class="sendText">wyślij</p>
+              <div class="eclipseContainer">
+                <div class="eclipse"></div>
+                <div class="eclipse"></div>
+                <div class="eclipse"></div>
+              </div>
+            </button>
               ​
           </form>
 
