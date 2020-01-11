@@ -52,10 +52,10 @@
 
       <ul class='navigation__ul'>
         <li class='ul__item'><a class='header' href="#">home</a></li>
-        <li class='ul__item'><a class='about' href="#">o mnie</a></li>
-        <li class='ul__item'><a class='skillSection' href="#">co umiem</a></li>
-        <li class='ul__item'><a class='projects' href="#">projekty</a></li>
-        <li class='ul__item'><a class='contact' href="#">kontakt</a></li>
+        <li class='ul__item'><a class='about' href="#" data-mlr-text>about</a></li>
+        <li class='ul__item'><a class='skillSection' href="#" data-mlr-text>technologies</a></li>
+        <li class='ul__item'><a class='projects' href="#" data-mlr-text>projects</a></li>
+        <li class='ul__item'><a class='contact' href="#" data-mlr-text>contact</a></li>
       </ul>
 
     </div>
@@ -68,15 +68,17 @@
     <div class="hamburger__line hamburger__line--3"></div>
   </div>
 
+  <select id="mbPOCControlsLangDrop" class="selectButton"></select>
+
+
   <div id="particles-js"></div>
 
   <header data-section='header'>
 
-
-    <div class='header__containerH1'>
-      <h1 class="header__h1 header__h1--1">Cześć, mam na imię <span class='h1__span'>Damian</span>,</h1>
+    <div class='header__containerH1'>      
+      <h1 class="header__h1 header__h1--1" ><span data-mlr-text>Hello, my name is </span><span class='h1__span'>Damian</span>,</h1>
       <h3 class='header__h1 header__h1--2'>JUNIOR FRONT-END DEVELOPER</h3>
-      <button class='header__button button '>Sprawdź <i class="fas fa-arrow-right"></i></i></button>
+      <button class='header__button button'><span data-mlr-text>Check </span><i class="fas fa-arrow-right"></i></i></button>
     </div>
 
     <div class='header__logo'>
@@ -93,11 +95,10 @@
     <article class='about' data-section='about'>
       <div class='about__wrapper'>
 
-        <h3 class='about__h3'>Kilka słow o mnie</h3>
+        <h3 class='about__h3' data-mlr-text>A few words about me</h3>
+        <h3 data-mlr-text></h3>
 
-        <span class='about__mainText'>
-          Cześć, nazywam się Damian i jestem Junior Front End developerem. Staram się by moja praca była jak najbardziej efektywna a wdrażane projekty wysokiej jakości. W szczególności staram się by kod który tworzę był czysty i przejrzysty. Podczas odtwarzania projektu graficznego zwracam uwagę na szczegóły i detale które są najistotniejsze. Jestem głodny wiedzy i ciekawych projektów w których mógł bym rozwinąć skrzydła oraz poznać nowe technologie i techniki. Swoje niewielkie doświadczenie komercyjne staram się nadrabiać ciężką pracą i godzinami spędzonymi na naucee, by szybko i sprawnie zdobywać wiedzę i umiejętności. 
-        </span>
+        <span class='about__mainText' data-mlr-text>Hello! My name is Damian and i am Junior Front End developer. I try to make my work as effective as possible and to implement high-quality projects. In particular, I try to make the code I create clean and transparent. When recreating a graphic design, I pay attention to the details and details that are most important. I am hungry for knowledge and interesting projects in which I could spread my wings and learn new technologies and techniques. I try to make up for my limited commercial experience with hard work and hours of study to quickly and efficiently acquire knowledge and skills.</span>
       </div>
     </article>
 
@@ -107,7 +108,7 @@
     <article class='skills' data-section='skillSection'>
 
       <section class='skills__section'>
-        <h3 class='skills__h3'>Jakich technologii używam?</h3>
+        <h3 class='skills__h3' data-mlr-text>Technology stack</h3>
 
         <div class='skills__wrapperBox'>
 
@@ -130,7 +131,7 @@
 
           <div class='wrapperBox__skill wrapperBox__skill--react'>
             <i class="fab fa-react"></i>
-            <span class='skill__description description--react'>React i React Native</span>
+            <span class='skill__description description--react'>React, React Native</span>
           </div>
 
 
@@ -142,7 +143,7 @@
 
           <div class='wrapperBox__skill wrapperBox__skill--git'>
             <i class="fab fa-git"></i>
-            <span class='skill__description description--git'>GIT i GitHub</span>
+            <span class='skill__description description--git'>GIT, GitHub</span>
           </div>
 
           <div class='wrapperBox__skill wrapperBox__skill--typescript'>
@@ -167,56 +168,87 @@
 
     <article class='projects' data-section='projects'>
 
-      <h3 class='projects__h3'>Wybrane <p class="projects__h3-blue">&nbsp; projekty</p> </h3>
+      <h3 class='projects__h3'><span data-mlr-text>Chosen</span><p class="projects__h3-blue" data-mlr-text>projects</p> </h3>
 
       <div class='projects__container'>
 
         <div class='projects__example projects__example--first projects__example--border'>
           <span class=' example__title'>budget app</span>
-          <button
-            class='example__show show--project'><a href='https://danstak.github.io/budget-app/' target="_blank">zobacz <i class="fas fa-search"></i></a>
+          <button class='example__show show--project'>
+              <a href='https://danstak.github.io/budget-app/' target="_blank" >
+                <span data-mlr-text>show </span>
+                <i class="fas fa-search"></i>
+              </a>
           </button>
-          <button
-             class='example__show show--code'><a href='https://github.com/DanStak/budget-app' target="_blank">kod <i class="fas fa-code"></i></a>
+          <button class='example__show show--code'>
+            <a href='https://github.com/DanStak/budget-app' target="_blank">
+              <span data-mlr-text>code </span>
+              <i class="fas fa-code"></i>
+            </a>
           </button>
         </div>
 
         <div class='projects__example projects__example--second projects__example--border'>
 
           <span class='example__title'>react-coutries</span>
-          <button
-            class='example__show show--project'><a href='https://danstak.github.io/react-countries/' target="_blank">zobacz <i class="fas fa-search"></i></a></button>
-          <button
-            class='example__show show--code'><a href='https://github.com/DanStak/react-countries' target="_blank">kod <i class="fas fa-code"></i></a></button>
+          <button class='example__show show--project'>
+            <a href='https://danstak.github.io/react-countries/' target="_blank">
+              <span data-mlr-text>show </span>
+              <i class="fas fa-search"></i>
+            </a>
+          </button>
+          <button class='example__show show--code'>
+            <a href='https://github.com/DanStak/react-countries' target="_blank">
+              <span data-mlr-text>code </span>
+              <i class="fas fa-code"></i>
+            </a>
+          </button>
         </div>
 
         <div class='projects__example projects__example--third projects__example--border'>
 
           <span class='example__title'>architectural company page</span>
-          <button
-            class='example__show show--project'><a href='https://danstak.github.io/RWD-page-in-scss/' target="_blank">zobacz <i class="fas fa-search"></i></a></button>
-          <button
-            class='example__show show--code'><a href='https://github.com/DanStak/RWD-page-in-scss' target="_blank">kod <i class="fas fa-code"></i></a></button>
+          <button class='example__show show--project'>
+            <a href='https://danstak.github.io/RWD-page-in-scss/' target="_blank">
+              <span data-mlr-text>show </span>
+              <i class="fas fa-search"></i>
+            </a>
+          </button>
+          <button class='example__show show--code'>
+            <a href='https://github.com/DanStak/RWD-page-in-scss' target="_blank">
+              <span data-mlr-text>code </span>
+              <i class="fas fa-code"></i>
+            </a>
+          </button>
         </div>
 
         <div class='projects__example projects__example--fourth projects__example--border'>
 
           <span class='example__title'>stone, paper, scissors game</span>
-          <button
-            class='example__show show--project'><a href=' https://danstak.github.io/STONE-PAPER-SCISSORS-GAME/' target="_blank">zobacz <i class="fas fa-search"></i></a></button>
-          <button
-            class='example__show show--code'><a href='https://github.com/DanStak/STONE-PAPER-SCISSORS-GAME' target="_blank">kod <i class="fas fa-code"></i></a></button>
+          <button class='example__show show--project'>
+            <a href=' https://danstak.github.io/STONE-PAPER-SCISSORS-GAME/' target="_blank">
+              <span data-mlr-text>show </span>
+              <i class="fas fa-search"></i>
+            </a>
+          </button>
+          <button class='example__show show--code'>
+            <a href='https://github.com/DanStak/STONE-PAPER-SCISSORS-GAME' target="_blank">
+              <span data-mlr-text>code </span>
+              <i class="fas fa-code"></i>
+            </a>
+          </button>
         </div>
 
-        <h3 class='experience__h3'>Doświadczenie</h3>
+        <h3 class='experience__h3' data-mlr-text>Experience</h3>
 
         <div class="projects__example--container  projects__example--exp1Container">
 
           <div class='projects__example projects__exampleCommercial projects__example--exp1'>
-            <span class='example__title'>Aplikacja mobilna iJunior</span>
+            <span class='example__title' data-mlr-text="">Mobile app iJunior</span>
             <button class='example__show show--gallery'>
                 <a target="_blank" data-fancybox="gallery" href="./img/iJunior/logo.png">
-                  zobacz  <i class="fas fa-images"></i>
+                  <span data-mlr-text>show </span>
+                  <i class="fas fa-code"></i>
                 </a>
 
                 <a style="display: none;" data-fancybox="gallery" href="./img/iJunior/s1.png"></a>
@@ -236,7 +268,7 @@
 
           <div class="projects__example--info">
             <div class="example__container example__techContainer">
-              <span class='example__techContainer--header'>TECHNOLOGIE</span>
+              <span class='example__techContainer--header' data-mlr-text>TECHNOLOGIES</span>
               <p class='example__techContainer--content'>React-native</p>
             </div>
           </div>
@@ -245,10 +277,11 @@
         <div class="projects__example--container projects__example--exp2Container">
 
           <div class='projects__example projects__exampleCommercial projects__example--exp2'>
-            <span class='example__title'>Aplikacja mobilna Gama</span>
+            <span class='example__title' data-mlr-text="">Mobile app Gama</span>
             <button class='example__show show--gallery'>
               <a data-fancybox="gallery1" href="./img/Gama/logo.jpg" target="_blank">
-                zobacz  <i class="fas fa-images"></i>
+                <span data-mlr-text>show </span>
+                <i class="fas fa-code"></i>
               </a>
 
               <a style="display: none;" data-fancybox="gallery1" href="./img/Gama/s1.png"></a>
@@ -267,7 +300,7 @@
 
           <div class="projects__example--info">
             <div class="example__container example__techContainer">
-              <span class='example__techContainer--header'>TECHNOLOGIE</span>
+              <span class='example__techContainer--header'data-mlr-text>TECHNOLOGIES</span>
               <p class='example__techContainer--content'>React-native, TypeScript, Axios, Firebase</p>
             </div>
   
@@ -286,7 +319,8 @@
             <span class='example__title'>CMS stisla Head2Toe</span>
             <button class='example__show show--gallery'>
               <a data-fancybox="gallery2" href="./img/HTT/1.PNG" target="_blank">
-                zobacz  <i class="fas fa-images"></i>
+                <span data-mlr-text>show </span>
+                <i class="fas fa-code"></i>
               </a>
 
               <a style="display: none;" data-fancybox="gallery2" href="./img/HTT/2.PNG"></a>
@@ -296,7 +330,7 @@
           </div>
           <div class="projects__example--info">
               <div class="example__container example__techContainer">
-                <span class='example__techContainer--header'>TECHNOLOGIE</span>
+                <span class='example__techContainer--header' data-mlr-text="">TECHNOLOGIES</span>
                 <p class='example__techContainer--content'>HTML, CSS, JavaScript, jQuery</p>
               </div>
     
@@ -312,10 +346,11 @@
         <div class="projects__example--container  projects__example--exp4Container">
 
           <div class='projects__example projects__exampleCommercial projects__example--exp4'>
-            <span class='example__title'>Aplikacja mobilna mBiuro</span>
+            <span class='example__title' data-mlr-text="">Mobile app mBiuro</span>
             <button class='example__show show--gallery'>
                 <a target="_blank" data-fancybox="gallery3" href="./img//mBiuro/s1.png">
-                  zobacz  <i class="fas fa-images"></i>
+                  <span data-mlr-text>show </span>
+                  <i class="fas fa-code"></i>
                 </a>
 
                 <a style="display: none;" data-fancybox="gallery3" href="./img/mBiuro/s2.png"></a>
@@ -337,7 +372,7 @@
 
           <div class="projects__example--info">
             <div class="example__container example__techContainer">
-              <span class='example__techContainer--header'>TECHNOLOGIE</span>
+              <span class='example__techContainer--header' data-mlr-text="">TECHNOLOGIES</span>
               <p class='example__techContainer--content'>React-native</p>
             </div>
           </div>
@@ -347,13 +382,16 @@
 
           <div class='projects__example projects__exampleCommercial projects__example--exp5'>
             <span class='example__title'>Progresive web app Alpha</span>
-            <button
-              class='example__show show--gallery'><a href='https://alpha.akanza.pl/' target="_blank">zobacz  <i class="fas fa-search"></i></a>
+            <button class='example__show show--gallery'>
+              <a href='https://alpha.akanza.pl/' target="_blank">
+                <span data-mlr-text>show </span>
+                <i class="fas fa-code"></i>
+              </a>
             </button>
           </div>
           <div class="projects__example--info">
               <div class="example__container example__techContainer">
-                <span class='example__techContainer--header'>TECHNOLOGIE</span>
+                <span class='example__techContainer--header' data-mlr-text="">TECHNOLOGIES</span>
                 <p class='example__techContainer--content'>React, React-Router</p>
               </div>
     
@@ -411,7 +449,7 @@
 
 
             <div class='contactWrapper__informations'>
-                <h4 class='informations__h4'>kontakt</h4>
+                <h4 class='informations__h4' data-mlr-text="">contact</h4>
 
                 <div class='informations'><i class="fas fa-phone icons"></i><span>511-106-113</span></div>
 
@@ -420,14 +458,14 @@
                 </div>
 
                 <div class='informations informations--message informations-messageDisplay'><span
-                    class='copy'>Skopiowano email do schowka</span>
+                    class='copy' data-mlr-text>Copied email to clipboard</span>
                 </div>
               </div>
 
               <!-- Form to sending emails -->
           
           <form id="sendMailForm" class="contactWrapper_form">
-            <span id="errorMessage" class="form__message">Wiadomośc wysłana poprawnie.</span>
+            <span id="errorMessage" class="form__message" data-mlr-text>Message send succesfully.</span>
             <div class="form__inputs">
               <input type="text" id="yourName" placeholder="imię lub firma" class="form__input form__input--marginRight"/>
               <input type="text" id="yourMail" placeholder="email" class="form__input form__input--marginLeft"/>
@@ -436,7 +474,7 @@
             <textarea type="text" placeholder="wiadomość" id="mailContent" class="form__textarea"></textarea>
               ​
             <button id="sendMail" class="form__senButton">
-              <p class="sendText">wyślij</p>
+              <p class="sendText" data-mlr-text>send</p>
               <div class="eclipseContainer">
                 <div class="eclipse"></div>
                 <div class="eclipse"></div>
@@ -472,9 +510,9 @@
 
     <footer>
       <div class='footer__container'>
-        <span class="footer__greating">Spędziłeś na mojej stronie już: </span>
+        <span class="footer__greating" data-mlr-text>You spent on my site already: </span>
         <span class='footer__timer'>00:00:00</span>
-        <span class="footer__greating">Dzięki za poświęcony czas!</span>
+        <span class="footer__greating" data-mlr-text>Thank you for your time!</span>
         <span class="footer__copy">&copy 2019 Damian Stasiak</span>
       </div>
     </footer>
@@ -482,16 +520,15 @@
     <!-- add class displayModal to display it -->
     <div class="modal__container">
       <section class="modal__mainBody ">
-        <span class="mainBody__text informations--copy">Ups, coś poszło nie tak, spróbuj ponownie za chwilę lub skopiuj <button class="copy--mail">stas.damian95@gmail.com</button> i napisz do mnie bezpośrednio!</span>
+        <span class="mainBody__text informations--copy" data-mlr-text>Wops, something went wrong. Try again for a moment or copy <button class="copy--mail">stas.damian95@gmail.com</button> i napisz do mnie bezpośrednio!</span>
         <button class="mainBody__dismiss">Ok</button>
 
         <div class='mainBody__infoCopy informations--message informations-messageDisplay'>
-          <span>Skopiowano email do schowka</span>
+          <span data-mlr-text>Skopiowano email do schowka</span>
         </div>
       </section>
 
     </div>
-
   </main>
 
 
@@ -513,6 +550,7 @@
   </script>
 
   <script src="js/sendMail.js"></script>
+  <script src="js/languageChange.js"></script>
 </body>
 
 </html>

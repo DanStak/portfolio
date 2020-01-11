@@ -1,6 +1,17 @@
 @import 'mixins';
 @import 'variables';
 
+.selectButton{
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 50px;
+  background-color: $main-bg-color;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px
+}
 
 main{
 
@@ -282,7 +293,8 @@ main{
       @include articlesH3();
 
       .projects__h3-blue{
-        color: $main-bg-color
+        color: $main-bg-color;
+        margin-left: 20px;
       }
     }
 

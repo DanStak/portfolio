@@ -286,10 +286,10 @@ goDown = (e) => {
 
   let section = `[data-section = ${e.target.classList}]`;
 
-  if (e.target.classList.contains('header__button')) {
+  // if (e.target.classList.contains('header__button')) {
     section = '[data-section = about]';
     time = 1000;
-  }
+  // }
 
   let scrollTo = $(section).offset().top
 
